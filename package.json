@@ -1,0 +1,32 @@
+{
+  "name": "element-docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rspress build",
+    "check": "biome check --write",
+    "doc:dev": "rspress dev",
+    "format": "biome format --write",
+    "preview": "rspress preview"
+  },
+  "dependencies": {
+    "@arco-design/web-react": "^2.66.8",
+    "@cs/element-pro": "^1.8.1",
+    "@rspress/core": "^2.0.0-rc.1",
+    "@yearrow/vue3-web-framework-library": "3.5.6-beta1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "solid-js": "^1.9.10",
+    "vue": "^3.5.24",
+    "@rspress/plugin-preview": "^2.0.0-rc.1",
+    "@rsbuild/plugin-vue": "^1.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@rsbuild/plugin-babel": "^1.0.6",
+    "@rsbuild/plugin-less": "^1.5.0",
+    "@rsbuild/plugin-vue-jsx": "^1.1.1",
+    "@rspress/plugin-playground": "2.0.0-rc.1",
+    "@types/node": "^18.11.17"
+  }
+}

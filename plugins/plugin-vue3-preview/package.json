@@ -1,0 +1,72 @@
+{
+  "name": "plugin-vue3-preview",
+  "version": "2.0.0-rc.1",
+  "description": "A plugin for rspress to preview the code block in markdown/mdx file.",
+  "bugs": "https://github.com/web-infra-dev/rspress/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-infra-dev/rspress.git",
+    "directory": "packages/plugin-preview"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "index.d.ts",
+    "dist",
+    "static"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build -w",
+    "reset": "rimraf ./**/node_modules"
+  },
+  "dependencies": {
+    "@rsbuild/core": "~1.6.8",
+    "@rsbuild/plugin-babel": "~1.0.6",
+    "@rsbuild/plugin-react": "~1.4.2",
+    "@rsbuild/plugin-solid": "~1.0.6",
+    "lodash": "4.17.21",
+    "qrcode.react": "^4.2.0",
+    "@rsbuild/plugin-less": "^1.5.0",
+    "@rsbuild/plugin-vue": "^1.2.0",
+    "@rsbuild/plugin-vue-jsx": "^1.1.1",
+    "vue-loader": "^17.4.2"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.55.1",
+    "@rslib/core": "0.18.0",
+    "@types/lodash": "^4.17.21",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^22.8.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "mdast-util-mdx-jsx": "^3.2.0",
+    "mdast-util-mdxjs-esm": "^2.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6",
+    "rsbuild-plugin-publint": "^0.3.3",
+    "typescript": "^5.8.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@rspress/core": "^2.0.0-rc.1",
+    "react": ">=18.0.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

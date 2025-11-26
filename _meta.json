@@ -1,0 +1,28 @@
+[
+  {
+    "text": "首页",
+    "link": "/home/home.html"
+  },
+  {
+    "text": "web规范",
+    "link": "/rules/guide/getting-started.html",
+    "activeMatch": "/rules/"
+  },
+  {
+    "text": "web组件",
+    "link": "/docs/index.html"
+  },
+  {
+    "text": "版本",
+    "items": [
+      {
+        "text": "更新日志",
+        "link": "https://gitea.yearrow.com/yearrow/element-plus-extention"
+      },
+      {
+        "text": "@cs/element-pro",
+        "link": "https://gitea.yearrow.com/yearrow/element-plus-extention"
+      }
+    ]
+  }
+]

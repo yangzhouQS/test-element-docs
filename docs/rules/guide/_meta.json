@@ -1,0 +1,21 @@
+[
+  {
+    "type": "file",
+    "name": "01.web-framework.mdx",
+    "label": "portal快速上手",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "02.component-lib.mdx",
+    "label": "组件库快速上手"
+  },
+  {
+    "type": "file",
+    "name": "getting-started",
+    "label": "快速开始",
+    "collapsible": true,
+    "collapsed": true
+  }
+]
