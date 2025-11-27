@@ -8,6 +8,7 @@
     "doc:dev": "rspress dev",
     "format": "biome format --write",
     "preview": "rspress preview",
+    "reset": "rimraf ./node_modules",
     "p:install": "pnpm install --force"
   },
   "dependencies": {

@@ -25,24 +25,17 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build -w",
-    "reset": "rimraf ./**/node_modules"
+    "reset": "rimraf ./node_modules",
+    "p:install": "pnpm install --force"
   },
   "dependencies": {
     "@rsbuild/core": "~1.6.8",
     "@rsbuild/plugin-babel": "~1.0.6",
     "@rsbuild/plugin-react": "~1.4.2",
-    "@rsbuild/plugin-solid": "~1.0.6",
-    "lodash": "4.17.21",
-    "qrcode.react": "^4.2.0",
-    "@rsbuild/plugin-less": "^1.5.0",
-    "@rsbuild/plugin-vue": "^1.2.0",
-    "@rsbuild/plugin-vue-jsx": "^1.1.1",
-    "vue-loader": "^17.4.2"
+    "qrcode.react": "^4.2.0"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.55.1",
     "@rslib/core": "0.18.0",
-    "@types/lodash": "^4.17.21",
     "@types/mdast": "^4.0.4",
     "@types/node": "^22.8.1",
     "@types/react": "^19.2.6",
@@ -56,5 +49,17 @@
     "typescript": "^5.8.2",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@rspress/core": "^2.0.0-rc.1",
+    "react": ">=18.0.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

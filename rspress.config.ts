@@ -1,10 +1,10 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
-import { pluginBabel } from '@rsbuild/plugin-babel';
+// import { pluginBabel } from '@rsbuild/plugin-babel';
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
 import { pluginLess } from '@rsbuild/plugin-less';
-import { pluginPreview } from '@rspress/plugin-preview';
+import { pluginPreview } from 'plugin-vue3-preview';
 
 const injectConfig = {
 	tags: [
@@ -120,12 +120,12 @@ export default defineConfig({
 			/* pluginBabel({
 				include: /\.(?:jsx|tsx)$/,
 			}), */
-			pluginVue(),
-			pluginVueJsx(),
-			pluginLess(),
+			// pluginVue(),
+			// pluginVueJsx(),
+			// pluginLess(),
 		],
 		output: {
-			assetPrefix: process.env.NODE_ENV === 'production' ? '/element-plus-extention/' : '/',
+			// assetPrefix: process.env.NODE_ENV === 'production' ? '/element-plus-extention/' : '/',
 		},
 		dev: {
 			progressBar: true,
@@ -160,10 +160,10 @@ createRoot(container).render(<Demo />);
 						/* pluginBabel({
 							include: /\.(?:jsx|tsx)$/,
 						}), */
-						pluginVueJsx(),
-						pluginLess(),
+						// pluginVueJsx(),
+						// pluginLess(),
 					],
-					dev: {
+					/* dev: {
 						hmr: true,
 						progressBar: true,
 						writeToDisk: true,
@@ -177,7 +177,7 @@ createRoot(container).render(<Demo />);
 						profile: true,
 						printFileSize: true,
 						removeMomentLocale: true,
-					}
+					} */
 				},
 			},
 		}),
