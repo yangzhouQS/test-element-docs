@@ -1,0 +1,632 @@
+# portal框架使用快速入门
+### 打包
+
+```javascript
+// eslint-disable-next-line no-unused-vars
+const path = require('path')
+const resolvePath = relativePath => path.resolve(process.cwd(), relativePath)
+module.exports = {
+  global: {
+    cwd: __dirname,
+    clear: ['dist'],
+    copy: {
+      'src/controllers/bootstrap.yml': 'dist/bootstrap.yml',
+      'src/controllers/.henhouserc': 'dist/.henhouserc',
+      'node_modules/vue/dist': 'dist/web-content/lib/vue',
+      'node_modules/vue-router/dist': 'dist/web-content/lib/vue-router',
+      'node_modules/element-plus/dist': 'dist/web-content/lib/element-plus',
+      'node_modules/@element-plus/icons-vue/dist': 'dist/web-content/lib/element-plus/icons-vue',
+      'node_modules/@cs/element-pro/lib': 'dist/web-content/lib/element-pro',
+      'node_modules/@cs/table-pro/lib': 'dist/web-content/lib/table-pro',
+      'src/web-content/assets': 'dist/web-content/assets',
+    },
+    eslint: {
+      lint: false, // 是否开启eslint(如果关闭只会在生产环境打包时进行eslint验证。)
+      option: {
+        fix: true, // 是否在打包时自动修复
+        exclude: 'node_modules' // 排除资源项
+      }
+    },
+    browserVue3: {
+      rootOutPath: 'dist/web-content/',
+      packerConfig: {
+        resolve: {
+          alias: {
+            '@': resolvePath('src')
+          },
+          extensions: ['.js', '.ts', '.json', '.jsx', '.vue', '.tsx']
+        },
+        externals: {
+          vue: 'Vue'
+        }
+      }
+    },
+    node: {
+      rootOutPath:'dist/',
+      packerConfig: {
+        resolve: {
+          extensions: ['.js', '.ts']
+        }
+      }
+    }
+  },
+  entries: {
+    server: {
+      type: 'node',
+      input: 'src/controllers/index.js',
+      output: {
+        fileName: 'app',
+        filePath: ''
+      }
+    },
+    single: {
+      type: 'browserVue3',
+      title: '单表',
+      input: 'src/web-content/module/single/index.ts'
+    }
+  }
+}
+
+
+```
+
+### eslint 校验
+- 安装以下资源包
+```
+  @vue/eslint-config-typescript
+  eslint
+  eslint-config-standard-with-typescript
+  eslint-plugin-import
+  eslint-plugin-n
+  eslint-plugin-promise
+  eslint-plugin-vue
+```
+- 配置文件
+```javascript
+// .eslintrc.js
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'plugin:vue/vue3-essential',
+    'standard-with-typescript'
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: [
+      './tsconfig.json'
+    ],
+    parser: '@typescript-eslint/parser'
+  },
+  globals: {
+    ElementPlus: false,
+    Vue: true
+  },
+  plugins: [
+    'vue'
+  ],
+  rules: {
+    'prefer-const': 2,
+    'no-console': 1,
+    quotes: [1, 'single'],
+    'space-in-parens': [2, 'never'],
+    semi: [2, 'always'],
+    'semi-spacing': [2, { before: false, after: true }],
+    'max-len': [
+      1,
+      {
+        code: 120,
+        tabWidth: 2,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreComments: true,
+        ignoreTrailingComments: true,
+        ignoreTemplateLiterals: true
+      }
+    ],
+    '@typescript-eslint/semi': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/member-delimiter-style': 'warn',
+    '@typescript-eslint/array-type': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off'
+  }
+};
+
+```
+### HTML 头部引入
+常用的`vue` `element-plus` `vue-router` `element-pro` 等包由头部引入，减少打包体积
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title> <%= htmlWebpackPlugin.options.title %></title>
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./assets/font/iconfont.css">
+  <!-- element-pro style -->
+  <link rel="stylesheet" href="./lib/element-pro/theme/index.css" />
+  <!-- table-pro style -->
+  <link rel="stylesheet" href="./lib/table-pro/theme/index.css" />
+  <!-- vue.js -->
+  <script src="./lib/vue/vue.global.prod.js"></script>
+  <!-- element-plus -->
+  <script src="./lib/element-plus/index.full.min.js"></script>
+  <!-- element-pro -->
+  <script src="./lib/element-pro/element-pro.iife.js"></script>
+  <!-- table-pro -->
+  <script src="./lib/table-pro/table-pro.iife.js"></script>
+  <!-- language -->
+  <script src="./lib/element-plus/locale/zh-cn.min.js"></script>
+  <!-- element-plus icon -->
+  <script src="./lib/element-plus/icons-vue/global.iife.min.js"></script>
+  <!-- vue-router -->
+  <script src="./lib/vue-router/vue-router.global.js"></script>
+<body>
+  <div id="app"></div>
+</body>
+</html>
+
+
+
+```
+
+
+## web框架
+
+web框架提供模块开发所需要的菜单、标题行、用户中心、应用列表等通用功能，留出模块开发区域，开发者使用时只需关注模块内容，通用部分直接引入即可
+
+web框架中注册了`vue` `ElementPlus` `ElementPlusLocaleZhCn` `ElementPro`，这些需要在模块的html的头部引用该资源包
+<img src="./web.png" />
+
+### 安装
+
+```bash
+$ pnpm install @yearrow/vue3-web-framework-library
+```
+
+### 引入
+
+在模块入口的`index.ts`文件中构造一个`WebFramework`对象，传入根组件和挂载的dom
+
+```javascript
+// index.ts
+import App from './App.vue';
+import { WebFramework, AppPageOptions } from '@yearrow/vue3-web-framework-library';
+
+// eslint-disable-next-line no-new
+new WebFramework<AppPageOptions>({
+  bodyComponent: App,
+  el: '#app'
+});
+
+
+```
+
+### 功能
+
+web框架默认导出一些功能可供模块内部使用
+
+#### http请求
+
+
+```javascript
+import { $http } from '@yearrow/vue3-web-framework-library'
+
+const loadData = async () => {
+  const params = {
+    preset: 'search',
+    key: '',
+    isValid: true
+  }
+  const orgs = await $http.get(`/services/org-nodes`, { params })
+}
+
+```
+
+#### 全局状态
+
+包含模块上下文、菜单、根组织等
+
+```javascript
+import { portalStore} from '@yearrow/vue3-web-framework-library'
+
+const portal = portalStore()
+
+// portal 对象可以拿到所有系统提供的状态值
+const orgId = portal.$context.orgId
+const orgName = portal.$context.orgShortName
+
+```
+#### 模块自定义状态
+
+存放模块的表格、表单、打印、导出等自定义配置
+
+提供公用转换方法
+
+`getTableColumnsConfig`: 根据表格配置计算表格中的列属性
+
+`getFormItemsConfig`: 构造动态表单配置
+
+`getFormModel`: 构造表单对象
+
+`getFilterItemsConfig`: 构造动态过滤器配置
+
+`getFilterModel`: 构造过滤器对象
+
+`getFilterConditionItems`: 构造过滤器自定义分页查询参数(ConditionItems)
+
+`getDescriptionItemsConfig`: 构造动态信息面板配置
+
+```javascript
+import { moduleCustomConfigStore, moduleCustomConfigStore, getFormItemsConfig, getFormModel, getTableColumnsConfig } from '@yearrow/vue3-web-framework-library';
+
+const { reactive, watch, ref, computed } = Vue;
+
+const moduleCustomConfig = moduleCustomConfigStore();
+
+console.log(moduleCustomConfig.formConfigs);
+
+```
+
+- 示例：表单自定义
+
+```html
+<template>
+   <flex-box :item-num="4" :item-config="flexConfig">
+    <template #item-1>
+      <box :clear-padding="['bottom']">
+        <dynamic-form ref="dynamicFormRef"
+          :model="formModel"
+          v-bind="dynamicFormConfigs.formConfigs"
+          :form-items="dynamicFormConfigs.formItemsConfigs"
+          >
+        </dynamic-form>
+      </box>
+    </template>
+    <template #item-2>
+    <flex-line :left-padding="true" :right-padding="true" >
+      <template #right>
+        <box>
+          <el-button type="primary" link >取消</el-button>
+          <el-button type="primary" @click="onSubmit">保存</el-button>
+        </box>
+      </template>
+    </flex-line>
+    </template>
+  </flex-box>
+</template>
+<script setup lang="tsx">
+import { moduleCustomConfigStore, getFormItemsConfig, getFormModel } from '@yearrow/vue3-web-framework-library';
+const { reactive, watch, ref, computed } = Vue;
+const moduleCustomConfig = moduleCustomConfigStore();
+console.log(moduleCustomConfig.formConfigs);
+
+const flexConfig = [
+  {
+    tag: 'item-1',
+    isFixed: false,
+    paddingSize: 'large',
+    clearPadding: ['bottom']
+  },
+  {
+    tag: 'item-2',
+    isFixed: true,
+    paddingSize: 'large',
+    clearPadding: ['top']
+  }
+]
+// 表单自定义：getFormModel 构造表单对象(formModel)
+const formModel = reactive(getFormModel(moduleCustomConfig.formConfigs, 'CompanyForm'))
+const dynamicFormRef = ref();
+// 表单自定义：getFormItemsConfig 构造动态表单配置
+const dynamicFormConfigs = computed(() => {
+  const renderParams = [
+    {
+      name: 'supplierName',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['supplierName']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'supplierContact',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['supplierContact']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'supplierPhone',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['supplierPhone']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'supplierOrgCode',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['supplierOrgCode']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'supplierTypeName',
+      renderContent: () => {
+        return (
+          <el-select v-model={formModel.supplierTypeName} placeholder="请选择">
+            <el-option label="材料供应商" value="材料供应商" />
+            <el-option label="设备供应商" value="设备供应商" />
+          </el-select>
+        )
+      },
+    },
+    {
+      name: 'bank',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['bank']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'bankAccount',
+      renderContent: () => {
+        return (
+          <el-input v-model={formModel['bankAccount']}></el-input>
+        )
+      },
+    },
+    {
+      name: 'isBlackList',
+      renderContent: () => {
+        return (
+          <el-switch v-model={formModel['isBlackList']}></el-switch>
+        )
+      }
+    }
+  ]
+  const result = getFormItemsConfig(moduleCustomConfig.formConfigs, 'CompanyForm', renderParams)
+  return result
+})
+const onSubmit = async () => {
+  const formRef = dynamicFormRef.value.getNativeRefs();
+  if (!formRef) return;
+  await formRef.validate((valid, fields) => {
+    if (valid) {
+      console.log('submit!', formModel);
+    } else {
+      console.log('error submit!', fields);
+    }
+  });
+};
+</script>
+
+```
+
+
+#### 系统功能hooks
+
+- 页面加载hook
+
+功能：引入后子页面强制刷新
+
+参数为`router`对象、其他参数`params`可为空
+```typescript
+import { usePageLoadHook } from '@yearrow/vue3-web-framework-library';
+interface PageParams {
+  isForceFlush?: boolean // 强制刷新，默认值true
+  rootPath?: string // 根路由，默认值 '/'
+}
+const { useRouter } = VueRouter;
+const router = useRouter();
+const params:PageParams =  { isForceFlush: true }
+usePageLoadHook(router, params);
+```
+### WebFramework 配置
+
+在初始化`WebFramework`对象时，传入构造函数的参数值
+```javascript
+// index.ts
+import App from './App.vue';
+import { WebFramework, AppPageOptions } from '@yearrow/vue3-web-framework-library';
+import CustomComponent from './custom-component.vue'
+
+new WebFramework<AppPageOptions>({
+	el: '#app', // 挂载的dom
+	bodyComponent: App, // 根组件
+	registerComponents: (app: any) => { // 注册自定义全局组件
+		app.component('CustomComponent', CustomComponent)
+	},
+	frameConfig: {
+    hideHeader: false, // 隐藏标题行
+		hideMenu: false,// 隐藏菜单
+		hideOrg: false,// 隐藏组织机构树
+		hideDocument: false,// 隐藏文档图标
+	},
+});
+
+```
+参数说明
+
+```typescript
+interface QueryParams {
+  applicationId?: string | number
+  orgId?: String | number
+  moduleId?: string | number
+  moduleUrl?: string
+}
+export interface FrameConfig {
+  // 隐藏标题
+  hideHeader?: boolean
+  // 隐藏菜单
+  hideMenu?: boolean
+  // 显示组织机构树
+  hideOrg?: boolean
+  // 隐藏文档图标
+  hideDocument?: boolean
+  // 隐藏标题行系统设置按钮
+  hideConfigSetting?: boolean
+  // 加载自定义配置
+  loadCustomConfig?: boolean
+  // 模块参数
+  queryParams?: QueryParams
+}
+
+```
+
+#### 路由
+
+1. 添加路由文件
+
+```typescript
+// router.ts
+const { createRouter, createWebHashHistory } = VueRouter
+const routes = [
+  {
+    path: '/',
+    name: '/',
+    meta: {
+      title: '首页'
+    },
+    component: () => import('./main.vue')
+  },
+  {
+    path: '/router-page',
+    name: 'router-page',
+    meta: {
+      title: '第二页'
+    },
+    component: () => import('./router-page.vue')
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
+})
+export default router 
+
+```
+
+2. 引入路由
+
+```javascript
+// index.ts
+import App from './App.vue';
+import { WebFramework, AppPageOptions } from '@yearrow/vue3-web-framework-library';
+import router from './router'
+import { VuePageStackPlugin } from 'vue-page-stack'; // 需要缓存时引入
+
+
+new WebFramework<AppPageOptions>({
+	bodyComponent: App,
+	el: '#app',
+	router,
+  registerComponents: (app: any) => {
+    // router is necessary
+    app.use(VuePageStackPlugin, { router }); // 需要缓存时引入
+  },
+});
+
+```
+
+3. 使用方式
+```html
+<!-- App.vue -->
+
+<!-- 无缓存 -->
+<template>
+  <router-view />
+</template>
+
+```
+
+```html
+<!-- App.vue -->
+
+<!-- 有缓存 -->
+<template>
+  <router-view v-slot="{ Component }">
+    <vue-page-stack @back="onBack" @forward="onForward">
+      <component :is="Component" :key="$route.fullPath"></component>
+    </vue-page-stack>
+  </router-view>
+</template>
+<script setup>
+const onBack = () => {
+  // console.log('back');
+};
+
+const onForward = () => {
+  // console.log('forward');
+};
+</script>
+```
+
+```typescript
+// main.vue
+const { useRouter } = VueRouter
+const router = useRouter()
+// 跳转
+const goRouter  = () => {
+  router.push({
+    name: 'router-page'
+  })
+}
+// 返回
+const back = () => {
+  router.back();
+}
+```
+
+
+
+#### 状态管理
+
+`pinia`是种支持vue3的状态管理工具，web框架在初始化时自动引入，支持开发者使用自定义状态
+
+模块中使用`portalPinia`初始化自定义状态，引用了web框架的项目无需单独引入`pinia`
+
+1.添加store文件
+```typescript
+// store/index.ts
+import { portalPinia } from '@yearrow/vue3-web-framework-library'
+
+interface CustomStore {
+  currentState: boolean
+}
+export const customStore = portalPinia.defineStore({
+  id: 'customStore',
+  state: (): CustomStore => ({
+    currentState: false
+  }),
+  actions: {
+    setCurrentState(bool:boolean) {
+      this.currentState = bool
+    }
+  }
+})
+```
+2.调用方式
+```html
+<template>
+  <el-switch v-model="store.currentState" @change="changeState"/>{{ store.currentState }}
+</template>
+<script lang="ts" setup>
+import { customStore } from './store/index'
+const store = customStore()
+
+const changeState = (value:boolean) => {
+  store.setCurrentState(value)
+}
+</script>
+```
