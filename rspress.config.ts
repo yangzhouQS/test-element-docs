@@ -5,6 +5,8 @@ import { pluginVue } from '@rsbuild/plugin-vue';
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginPreview } from 'plugin-vue3-preview';
+import { pluginPlayground } from '@rspress/plugin-playground';
+
 
 const injectConfig = {
 	tags: [
@@ -181,5 +183,6 @@ createRoot(container).render(<Demo />);
 				},
 			},
 		}),
+		pluginPlayground()
 	],
 });
