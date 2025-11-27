@@ -154,7 +154,7 @@ createRoot(container).render(<Demo />);
 `;
 				},
 				builderConfig: {
-					html: injectConfig,
+					// html: injectConfig,
 					plugins: [
 						pluginVue(),
 						/* pluginBabel({
