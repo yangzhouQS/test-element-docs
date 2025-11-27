@@ -1,0 +1,152 @@
+# Typography 字体段落
+
+
+文字是重要的信息传达元素之一，它本身的视觉特性和品质影响着信息传递的质量和产品操作的效率。根据过往的产品设计经验，提供了通用的字体、字重、行高、段间距建议。
+
+
+## 字体
+
+用户通过文字来理解内容和完成工作，科学的字体系统应该具有良好的可读性。无衬线体更加亲和，现代，清晰便于阅读，为网页中常用的字体类型，因此优先使用各个系统中默认的无衬线字体。
+
+<img src="./img-typography/字体.jpg"></img>
+
+
+##  字号
+
+文字的大小，层级，对比度等都是影响视觉可读性和阅读效率的重要因素，为保障文本的易读性
+
+
+
+```
+<template>
+  <table class="demo-typo-size">
+    <tbody>
+      <thead>
+        <tr>
+          <td>场景</td>
+          <td>字号</td>
+          <td>变量</td>
+          <td class="color-dark-light">示例</td>
+        </tr>
+      </thead>
+      <tr
+        v-for="(fontSize, i) in fontSizes"
+        :key="i"
+        :style="`font-size: var(--el-font-size-${fontSize.type})`"
+      >
+        <td>{{ fontSize.level }}</td>
+        <td>
+          {{
+            useCssVar(`--el-font-size-${fontSize.type}`).value +
+            ' ' +
+            formatType(fontSize.type)
+          }}
+        </td>
+        <td>{{ '--el-font-size-' + fontSize.type }}</td>
+        <td>字号规范示例</td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<script lang="ts" setup>
+ import { useCssVar } from '@vueuse/core'
+
+const fontSizes = [
+  {
+    level: '辅助文字',
+    type: 'extra-small'
+  },
+  // {
+  //   level: '正文（小）',
+  //   type: 'small',
+  // },
+  {
+    level: '正文',
+    type: 'base',
+  },
+  {
+    level: '小标题',
+    type: 'medium',
+  },
+  {
+    level: '标题',
+    type: 'large',
+  },
+  {
+    level: '主标题',
+    type: 'extra-large',
+  },
+]
+
+function formatType(type: string) {
+  return type
+    .split('-')
+    .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+    .join(' ')
+}
+</script>
+```
+
+
+- 考虑通用性和用户包容性，在字号的选择上，我们将主字号定义为14px，并提供了不同层级的字号以适配不同信息层级的展示需求。
+
+- 字体层级：区分文本主副层级，字号差距需保持2-4px
+
+- 一个产品中不要有过多的字体层级，建议选择在 3-5 种之间，对于需要用户关注的文本信息可通过增加字重的方式突出
+
+
+## 字重
+
+指字体的粗细程度。
+
+::: tip
+
+同一个字体的不同字重能传达不同的信息权重和情绪。细的字体给人以细腻、轻快的感觉，而粗体则给人着重和严肃的认知。因此适合的场景使用合适的字重非常重要。
+
+:::
+
+```
+<template>
+  <div class="content" >
+    <div v-for="(item, i) in data" :key="i">
+        <p>{{item.name}} - {{item.weight}} - {{item.title}}</p>
+        <p :style="{fontSize: '36px', fontWeight: item.weight}">物资管理系统</p>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+  const data = [
+    // { name: 'Light', title: '特殊场景', weight: 300 },
+    { name: '正文', title: '正文描述文字', weight: 400 },
+    { name: '标题', title: '标题文字、表格的表头', weight: 500 },
+    { name: '大标题', title: '展示型数据', weight: 600 }
+  ]
+</script>
+<style lang="less" scoped>
+  .content {
+  }
+</style>
+```
+
+
+
+
+## 行高
+
+标准默认的行高为1.5倍。
+
+
+
+
+```
+<div style="line-height:1.5">
+  <div>
+    本行高度1.5本行高度1.5
+  </div>
+  <div>
+    本行高度1.5本行高度1.5本行高度1.5
+  </div>
+</div>
+```

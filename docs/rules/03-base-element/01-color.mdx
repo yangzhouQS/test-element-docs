@@ -1,0 +1,310 @@
+# Color 色彩
+
+
+色彩对产品的视觉传达和多维度信息的承载有着很重要的影响，好的产品在色彩配置上应当清晰，准确的传达有效信息和品牌感。
+
+## 基本介绍
+
+### 色彩的作用
+
+<img src="./img-color/色彩的作用.jpg" height="300"/>
+
+
+B端产品中，颜色不仅仅用来传达品牌调性，更多的是用来传达以下信息：
+
+- 反馈信息：通过不同的颜色给予信息反馈，例如红色代表错误信息，绿色代表成功信息。
+
+- 突出层级：通过色彩可以对内容信息进行分层级展示，提高用户读取信息的效率。
+
+- 表明状态：通过颜色来区分某个事物处于何种状态。
+
+### 色彩系统的原则
+
+<img src="./img-color/色彩系统的原则.jpg" height="300"/>
+
+- 理性的：我们在选色时，尽可能避免个人的设计风格，减少配色的主观性，理性有逻辑地选色。
+
+- 可扩展的：使用这种选色方法可以扩展生成更多的颜色，以适应不同的变化。
+
+- 和谐的：色彩规范中的颜色互相搭配使用时，应该是和谐的。
+
+
+## 色彩组成
+
+按照颜色类型和功能的不同，我们将色彩分为主色、中性色、辅助色。
+
+
+###  主色
+
+主色是一个产品的代表颜色，一般与品牌色相关联。
+
+通常，一套产品只有一个品牌主色，是界面中出现最多的颜色，在需要用色强调而且没有其他要求时，一般都会选择主色
+
+
+```vue
+<template>
+    <el-row :gutter="10">
+        <el-col v-for="(item,i) in colorData" :key="i" :span="3">
+        <div class="color-box">
+        <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+    <div class="bottom">{{item.label}}</div>
+    </div>
+    </el-col>
+    </el-row>
+</template>
+
+
+<script lang="ts" setup>
+    const colorData = [
+    {var: '--el-color-primary-dark-2', label: '点击/选中'},
+    {var: '--el-color-primary', label: '常规'},
+    {var: '--el-color-primary-light-3', label: '悬浮'},
+    {var: '--el-color-primary-light-5', label: '特殊场景'},
+    {var: '--el-color-primary-light-7', label: '一般禁用'},
+    {var: '--el-color-primary-light-8', label: '文字禁用'},
+    {var: '--el-color-primary-light-9', label: '浅色/白底悬浮'}
+    ]
+</script>
+
+```
+- 使用主色突出信息，引导操作，功能状态表达
+
+- 用于文字按钮、链接、卡片底色或边框色
+
+- 常用于主要按钮和文字、高亮提醒、空状态
+
+- 重点操作状态，tab的选中态，图表的颜色等
+
+
+
+
+
+### 辅助色
+
+即功能色，借助人们的对色彩的心理模型，帮助人高效获得信息。例如绿色代表通行、成功，红色代表禁止、错误、危险操作，橙色代表提示/警告
+
+
+
+#### 成功
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData" :key="i" :span="3">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+
+<script lang="ts" setup>
+    const colorData = [
+    {var: '--el-color-success-dark-2', label: '点击/选中'},
+    {var: '--el-color-success', label: '常规'},
+    {var: '--el-color-success-light-3', label: '悬浮'},
+    {var: '--el-color-success-light-5', label: '特殊场景'},
+    {var: '--el-color-success-light-7', label: '一般禁用'},
+    {var: '--el-color-success-light-8', label: '文字禁用'},
+    {var: '--el-color-success-light-9', label: '浅色/白底悬浮'}
+    ]
+    const colorData1 = [
+    {var: '--el-color-warning-dark-2', label: '点击/选中'},
+    {var: '--el-color-warning', label: '常规'},
+    {var: '--el-color-warning-light-3', label: '悬浮'},
+    {var: '--el-color-warning-light-5', label: '特殊场景'},
+    {var: '--el-color-warning-light-7', label: '一般禁用'},
+    {var: '--el-color-warning-light-8', label: '文字禁用'},
+    {var: '--el-color-warning-light-9', label: '浅色/白底悬浮'}
+    ]
+    const colorData2 = [
+    {var: '--el-color-danger-dark-2', label: '点击/选中'},
+    {var: '--el-color-danger', label: '常规'},
+    {var: '--el-color-danger-light-3', label: '悬浮'},
+    {var: '--el-color-danger-light-5', label: '特殊场景'},
+    {var: '--el-color-danger-light-7', label: '一般禁用'},
+    {var: '--el-color-danger-light-8', label: '文字禁用'},
+    {var: '--el-color-danger-light-9', label: '浅色/白底悬浮'}
+    ]
+    const colorData3 = [
+    {var: '--el-color-primary-dark-2', label: '点击/选中'},
+    {var: '--el-color-primary', label: '常规'},
+    {var: '--el-color-primary-light-3', label: '悬浮'},
+    {var: '--el-color-primary-light-5', label: '特殊场景'},
+    {var: '--el-color-primary-light-7', label: '一般禁用'},
+    {var: '--el-color-primary-light-8', label: '文字禁用'},
+    {var: '--el-color-primary-light-9', label: '浅色/白底悬浮'}
+    ]
+    const colorData4 = [
+    {var: '--el-color-info-dark-2', label: '点击/选中'},
+    {var: '--el-color-info', label: '常规'},
+    {var: '--el-color-info-light-3', label: '悬浮'},
+    {var: '--el-color-info-light-5', label: '特殊场景'},
+    {var: '--el-color-info-light-7', label: '一般禁用'},
+    {var: '--el-color-info-light-8', label: '文字禁用'},
+    {var: '--el-color-info-light-9', label: '浅色/白底悬浮'}
+    ]
+</script>
+```
+#### 警告/提醒
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData1" :key="i" :span="3">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+#### 错误
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData2" :key="i" :span="3">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+#### 链接
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData3" :key="i" :span="3">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+#### 信息色
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData4" :key="i" :span="3">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+
+
+
+
+###  中性色
+
+通过运用不同的中性色，来表现层次结构。
+
+常用于文字、背景、图标、边框和分割线等元素。
+
+::: tip
+
+中性色非常重要，在页面中应用最多。由于是无彩色系，只要控制得当，可以大面积使用，不会增加界面的信息负担，反而有利于形成内容层次和区域划分，让界面更加有序，内容结构更加清晰，还不会影响界面风格。
+
+
+当然中性色使用时，需要有比较明确的色彩对比关系，否则可能模糊一团，影响信息的可读性。
+
+:::
+
+#### 线条
+```
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData" :key="i" :span="4">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+
+<script lang="ts" setup>
+    const colorData = [
+    {var: '--el-border-color', label: '常规'},
+    {var: '--el-border-color-dark', label: '深/灰底'},
+    {var: '--el-border-color-light', label: '浅色'}
+    ]
+    const colorData1 = [
+    {var: '--el-fill-color-light', label: '浅/禁用'},
+    {var: '--el-fill-color', label: '一般/常规/白色悬浮'},
+    {var: '--el-fill-color-dark', label: '重/特殊场景'}
+    ]
+    const colorData2 = [
+    {var: '--el-text-color-primary', label: '强调/正文标题'},
+    {var: '--el-text-color-regular', label: '次强调/正文标题'},
+    {var: '--el-text-color-secondary', label: '次要信息'},
+    {var: '--el-text-color-placeholder', label: '占位符'},
+    {var: '--el-text-color-disabled', label: '置灰信息/禁用'}
+    ]
+</script>
+```
+
+#### 填充
+```html
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData1" :key="i" :span="4">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+
+#### 文字
+```html
+<el-row :gutter="10">
+    <el-col v-for="(item,i) in colorData2" :key="i" :span="4">
+    <div class="color-box">
+    <div class="top" :style="{background: `var(${item.var})`}">{{item.var}}</div>
+<div class="bottom">{{item.label}}</div>
+</div>
+</el-col>
+</el-row>
+```
+
+
+
+### 背景色
+
+背景色是用来设置图像的背景颜色，也用来设置文档、表格、图像等的背景颜色。用于不同的区域之间叠加需用不同的背景色区分，体现出层次感。
+
+
+```html
+<template>
+  <div class="main">
+    <div class="border-area demo-bg">
+      页面背景色(--el-bg-color-page)
+      </br>#F2F3F5
+    </div>
+    <div class="border-area demo-bg-light">
+      页面背景色(--el-bg-color)
+      </br>#FFFFFF
+    </div>
+  </div>
+</template>
+<style scoped>
+.main {
+  display: flex
+}
+.border-area {
+  margin-right: 30px;
+  width:340px;
+  height: 150px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--el-text-color-regular);
+  border-radius: 2px
+}
+.demo-bg {
+  background: var(--el-bg-color-page)
+}
+.demo-bg-light {
+  border: 1px solid var(--el-border-color);
+  background: var(--el-bg-color)
+}
+</style>
+```
+
