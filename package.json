@@ -34,6 +34,7 @@
     "vue-loader": "^17.4.2"
   },
   "devDependencies": {
+    "rimraf": "^6.1.2",
     "@microsoft/api-extractor": "^7.55.1",
     "@biomejs/biome": "^2.3.7",
     "@types/node": "^24.10.1"
