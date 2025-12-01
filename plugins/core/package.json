@@ -53,7 +53,7 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build -w",
-    "prepare": "node ./scripts/generateJsonSchema.mjs",
+    "prepare2": "node ./scripts/generateJsonSchema.mjs",
     "reset": "rimraf ./**/node_modules"
   },
   "dependencies": {

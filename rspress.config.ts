@@ -5,7 +5,6 @@ import { pluginVue } from '@rsbuild/plugin-vue';
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginPreview } from 'plugin-vue3-preview';
-import { pluginPlayground } from '@rspress/plugin-playground';
 
 
 const injectConfig = {
@@ -117,7 +116,6 @@ export default defineConfig({
 	},
 	builderConfig: {
 		html: injectConfig,
-
 		plugins: [
 			/* pluginBabel({
 				include: /\.(?:jsx|tsx)$/,
@@ -137,20 +135,17 @@ export default defineConfig({
 		pluginPreview({
 			previewLanguages: [ 'jsx', 'tsx', 'vue' ],
 			iframeOptions: {
-				// devPort: 7788,
-				customEntry: ({ entryCssPath, demoPath }) => {
+				customEntry: ({ demoPath }) => {
 					if (demoPath.endsWith('.vue')) {
 						return `
 import { createApp } from 'vue';
-import App from ${ JSON.stringify(demoPath) };
-import ${ JSON.stringify(entryCssPath) };
+import App from ${JSON.stringify(demoPath)};
 createApp(App).mount('#root');
 `;
 					}
 					return `
 import { createRoot } from 'react-dom/client';
-import ${ JSON.stringify(entryCssPath) };
-import Demo from ${ JSON.stringify(demoPath) };
+import Demo from ${JSON.stringify(demoPath)};
 const container = document.getElementById('root');
 createRoot(container).render(<Demo />);
 `;
@@ -183,6 +178,5 @@ createRoot(container).render(<Demo />);
 				},
 			},
 		}),
-		// pluginPlayground()
 	],
 });
