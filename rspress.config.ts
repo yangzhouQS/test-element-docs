@@ -5,7 +5,7 @@ import { pluginVue } from '@rsbuild/plugin-vue';
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginPreview } from 'plugin-vue3-preview';
-
+import ElementPlus from 'element-plus'
 
 const injectConfig = {
 	tags: [
@@ -63,14 +63,21 @@ const injectConfig = {
 			tag: 'link',
 			attrs: {
 				rel: 'stylesheet',
-				href: 'https://cdn.yearrow.com/files/@cs/element-pro/1.7.9/theme/yellow.css',
+				href: 'https://cdn.yearrow.com/fonts/cs-common/1.0.0/iconfont.css',
 			},
 		},
 		{
 			tag: 'link',
 			attrs: {
 				rel: 'stylesheet',
-				href: 'https://cdn.yearrow.com/files/@cs/table-pro/1.0.6-beta/theme/green-index.css',
+				href: 'https://cdn.yearrow.com/files/@cs/element-pro/1.8.0/theme/index.css',
+			},
+		},
+		{
+			tag: 'link',
+			attrs: {
+				rel: 'stylesheet',
+				href: 'https://cdn.yearrow.com/files/@cs/table-pro/1.0.5/theme/index.css',
 			},
 		},
 	],
@@ -133,19 +140,29 @@ export default defineConfig({
 	},
 	plugins: [
 		pluginPreview({
+			previewMode: 'iframe',
 			previewLanguages: [ 'jsx', 'tsx', 'vue' ],
+			defaultRenderMode: 'preview', // 'pure' | 'preview'
+			defaultPreviewMode: 'iframe-fixed', // 'internal' | 'iframe-follow' | 'iframe-fixed'
 			iframeOptions: {
+				position: 'fixed',
 				customEntry: ({ demoPath }) => {
 					if (demoPath.endsWith('.vue')) {
 						return `
 import { createApp } from 'vue';
-import App from ${JSON.stringify(demoPath)};
-createApp(App).mount('#root');
+import App from ${ JSON.stringify(demoPath) };
+const app = createApp(App)
+if(window.ElementPlus){
+console.log("注册成功");
+	app.use(window.ElementPlus);
+}
+app.mount('#root');
 `;
 					}
 					return `
 import { createRoot } from 'react-dom/client';
-import Demo from ${JSON.stringify(demoPath)};
+import Demo from ${ JSON.stringify(demoPath) };
+console.log("demo = ", Demo);
 const container = document.getElementById('root');
 createRoot(container).render(<Demo />);
 `;

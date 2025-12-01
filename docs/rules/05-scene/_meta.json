@@ -1,9 +1,32 @@
 [
   {
     "type": "file",
-    "name": "getting-started",
-    "label": "快速开始",
-    "collapsible": true,
-    "collapsed": true
+    "name": "01-navigation",
+    "label": "导航条"
+  },
+  {
+    "type": "file",
+    "name": "02-button",
+    "label": "功能按钮"
+  },
+  {
+    "type": "file",
+    "name": "03-filter",
+    "label": "过滤器"
+  },
+  {
+    "type": "file",
+    "name": "04-form",
+    "label": "表单"
+  },
+  {
+    "type": "file",
+    "name": "05-data-display.mdx",
+    "label": "数据展示"
+  },
+  {
+    "type": "file",
+    "name": "06-message.mdx",
+    "label": "反馈"
   }
 ]
