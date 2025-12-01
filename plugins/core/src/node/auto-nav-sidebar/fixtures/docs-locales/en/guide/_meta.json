@@ -1,0 +1,18 @@
+[
+  {
+    "type": "dir",
+    "name": "test-dir"
+  },
+  {
+    "type": "dir",
+    "name": "test-same-name-dir"
+  },
+  "a",
+  "b",
+  "c",
+  {
+    "type": "custom-link",
+    "label": "My Link",
+    "link": "/guide/test-dir"
+  }
+]
