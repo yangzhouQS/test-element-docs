@@ -122,9 +122,9 @@ export default defineConfig({
 			/* pluginBabel({
 				include: /\.(?:jsx|tsx)$/,
 			}), */
-			// pluginVue(),
-			// pluginVueJsx(),
-			// pluginLess(),
+			pluginVue(),
+			pluginVueJsx(),
+			pluginLess(),
 		],
 		output: {
 			// assetPrefix: process.env.NODE_ENV === 'production' ? '/element-plus-extention/' : '/',
@@ -156,14 +156,14 @@ createRoot(container).render(<Demo />);
 `;
 				},
 				builderConfig: {
-					// html: injectConfig,
+					html: injectConfig,
 					plugins: [
 						pluginVue(),
 						/* pluginBabel({
 							include: /\.(?:jsx|tsx)$/,
 						}), */
-						// pluginVueJsx(),
-						// pluginLess(),
+						pluginVueJsx(),
+						pluginLess(),
 					],
 					/* dev: {
 						hmr: true,
@@ -183,6 +183,6 @@ createRoot(container).render(<Demo />);
 				},
 			},
 		}),
-		pluginPlayground()
+		// pluginPlayground()
 	],
 });

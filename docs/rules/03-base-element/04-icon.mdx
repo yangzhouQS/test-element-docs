@@ -1,0 +1,61 @@
+# Icon 图标
+
+
+### 通用图标
+
+font-family:`cs-common`
+
+
+##  ElementPlus图标
+
+Element Plus 提供了一套常用的图标集合。
+
+::: tip
+详情请查看官方文档
+:::
+
+### 引入
+
+通过头部引入的方式，使用全局变量 `ElementPlusIconsVue`
+
+```
+<script src="./lib/element-plus/icons-vue/global.iife.min.js"></script>
+```
+
+```
+<template>
+  <el-button type="info" plain :icon="Search">查询</el-button>
+</template>
+
+<script lang="ts" setup>
+const { Search } = ElementPlusIconsVue
+</script>
+```
+
+
+### 代码示例
+
+```
+<template>
+  <el-icon :size="20" color="red">
+    <Delete />
+  </el-icon>
+  <el-icon :size="20" class="is-loading">
+    <Loading />
+  </el-icon>
+  <el-icon :size="20" class="el-icon--left">
+    <Message />
+  </el-icon>
+  <el-icon  :size="20" class="el-icon--right">
+    <Search />
+  </el-icon>
+</template>
+<script lang="ts" setup>
+import {
+  Delete,
+  Loading,
+  Message,
+  Search,
+} from '@element-plus/icons-vue'
+</script>
+```

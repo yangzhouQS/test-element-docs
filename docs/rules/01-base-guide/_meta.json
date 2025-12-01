@@ -13,6 +13,11 @@
   },
   {
     "type": "file",
+    "name": "03.common-class",
+    "label": "公共类"
+  },
+  {
+    "type": "file",
     "name": "getting-started",
     "label": "快速开始",
     "collapsible": true,

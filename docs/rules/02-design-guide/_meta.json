@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "01.base-rule",
+    "label": "基本原则"
+  },
+  {
+    "type": "file",
+    "name": "02.doc-style.mdx",
+    "label": "DocStyle 文案样式"
+  },
+  {
+    "type": "file",
+    "name": "03-word-rule",
+    "label": "用语原则"
+  }
+]

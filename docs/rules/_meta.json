@@ -1,7 +1,27 @@
 [
   {
     "type": "dir",
-    "name": "guide",
+    "name": "01-base-guide",
     "label": "开发指南"
+  },
+  {
+    "type": "dir",
+    "name": "02-design-guide",
+    "label": "设计指南"
+  },
+  {
+    "type": "dir",
+    "name": "03-base-element",
+    "label": "基础元素"
+  },
+  {
+    "type": "dir",
+    "name": "04-layout",
+    "label": "布局"
+  },
+  {
+    "type": "dir",
+    "name": "05-scene",
+    "label": "场景"
   }
 ]

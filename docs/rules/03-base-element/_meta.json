@@ -1,0 +1,22 @@
+[
+  {
+    "type": "file",
+    "name": "01-color",
+    "label": "色彩"
+  },
+  {
+    "type": "file",
+    "name": "02-typography.mdx",
+    "label": "字体段落"
+  },
+  {
+    "type": "file",
+    "name": "03-border.mdx",
+    "label": "边框"
+  },
+  {
+    "type": "file",
+    "name": "04-icon.mdx",
+    "label": "图标"
+  }
+]
