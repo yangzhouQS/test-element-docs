@@ -22,40 +22,13 @@ Element Plus 提供了一套常用的图标集合。
 <script src="./lib/element-plus/icons-vue/global.iife.min.js"></script>
 ```
 
-```
-<template>
-  <el-button type="info" plain :icon="Search">查询</el-button>
-</template>
+```vue preview="iframe-follow" file="./04/01.vue"
 
-<script lang="ts" setup>
-const { Search } = ElementPlusIconsVue
-</script>
 ```
 
 
 ### 代码示例
 
-```
-<template>
-  <el-icon :size="20" color="red">
-    <Delete />
-  </el-icon>
-  <el-icon :size="20" class="is-loading">
-    <Loading />
-  </el-icon>
-  <el-icon :size="20" class="el-icon--left">
-    <Message />
-  </el-icon>
-  <el-icon  :size="20" class="el-icon--right">
-    <Search />
-  </el-icon>
-</template>
-<script lang="ts" setup>
-import {
-  Delete,
-  Loading,
-  Message,
-  Search,
-} from '@element-plus/icons-vue'
-</script>
+```vue preview="iframe-follow" file="./04/02.vue"
+
 ```
