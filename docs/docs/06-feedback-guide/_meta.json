@@ -1,0 +1,49 @@
+[
+  {
+    "label": "骨架屏",
+    "link": "https://element-plus.org/zh-CN/component/skeleton.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "加载面板",
+    "name": "loading",
+    "link": "https://element-plus.org/zh-CN/component/loading.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "警告信息",
+    "name": "Alert",
+    "link": "https://element-plus.org/zh-CN/component/alert.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "信息提示",
+    "name": "Message",
+    "link": "https://element-plus.org/zh-CN/component/message.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "通知框",
+    "name": "Notification",
+    "link": "https://element-plus.org/zh-CN/component/notification.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "对话框",
+    "name": "Dialog",
+    "link": "https://element-plus.org/zh-CN/component/dialog.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "抽屉",
+    "name": "Drawer",
+    "link": "https://element-plus.org/zh-CN/component/drawer.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "弹出信息",
+    "name": "Popover",
+    "link": "https://element-plus.org/zh-CN/component/popover.html",
+    "type": "custom-link"
+  }
+]

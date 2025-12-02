@@ -1,0 +1,52 @@
+[
+  {
+    "type": "custom-link",
+    "label":"格栅",
+    "link": "https://element-plus.org/zh-CN/component/layout.html"
+  },
+  {
+    "type": "custom-link",
+    "label":"间距",
+    "link": "https://element-plus.org/zh-CN/component/space.html"
+  },
+  {
+    "type": "file",
+    "name": "01-flexbox.mdx",
+    "label": "弹性盒子"
+  },
+  {
+    "type": "file",
+    "name": "02-flex-line.mdx",
+    "label": "行工具条"
+  },
+  {
+    "type": "custom-link",
+    "label":"分割线",
+    "link": "https://element-plus.org/zh-CN/component/divider.html"
+  },
+  {
+    "type": "file",
+    "name": "03-fold-divider.mdx",
+    "label": "折叠分割线"
+  },
+  {
+    "type": "file",
+    "name": "04-panel.mdx",
+    "label": "面板"
+  },
+  {
+    "type": "file",
+    "name": "05-toolbar.mdx",
+    "label": "工具条"
+  },
+  {
+    "type": "file",
+    "name": "06-filter-item.mdx",
+    "label": "元素布局"
+  },
+  {
+    "type": "file",
+    "name": "07-box.mdx",
+    "label": "盒子"
+  }
+]

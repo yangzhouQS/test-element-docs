@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "name": "01-help-class.mdx",
+    "label": "辅助类"
+  },
+  {
+    "type": "file",
+    "name": "02-theme.mdx",
+    "label": "自定义样主题"
+  },
+  {
+    "type": "file",
+    "name": "03-markdown.mdx",
+    "label": "markdown书写"
+  }
+]

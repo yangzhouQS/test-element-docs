@@ -1,0 +1,107 @@
+[
+  {
+    "label": "输入框",
+    "name": "Input",
+    "link": "https://element-plus.org/zh-CN/component/input.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "数值输入框",
+    "name": "InputNumber",
+    "link": "https://element-plus.org/zh-CN/component/input-number.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "选择器",
+    "name": "Select",
+    "link": "https://element-plus.org/zh-CN/component/select.html",
+    "type": "custom-link"
+  },
+  {
+    "type": "file",
+    "name": "01-search-select.mdx",
+    "label": "可搜索选择器"
+  },
+  {
+    "label": "单选",
+    "name": "Radio",
+    "link": "https://element-plus.org/zh-CN/component/radio.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "多选",
+    "name": "Checkbox",
+    "link": "https://element-plus.org/zh-CN/component/checkbox.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "树选择器",
+    "name": "TreeSelect",
+    "link": "https://element-plus.org/zh-CN/component/tree-select.html",
+    "type": "custom-link"
+  },
+  {
+    "type": "file",
+    "name": "02-search-tree-select.mdx",
+    "label": "可搜索树选择器"
+  },
+  {
+    "type": "file",
+    "name": "03-date-pick.mdx",
+    "label": "日期选择器"
+  },
+  {
+    "label": "时间选择器",
+    "name": "TimePick",
+    "link": "https://element-plus.org/zh-CN/component/date-picker.html",
+    "type": "custom-link"
+  },
+  {
+    "type": "file",
+    "name": "04-date-range-picker.mdx",
+    "label": "时间范围选择器"
+  },
+  {
+    "label": "开关",
+    "name": "Swith",
+    "link": "https://element-plus.org/zh-CN/component/switch.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "上传",
+    "name": "Upload",
+    "link": "https://element-plus.org/zh-CN/component/upload.html",
+    "type": "custom-link"
+  },
+  {
+    "label": "表单",
+    "name": "Form",
+    "link": "https://element-plus.org/zh-CN/component/form.html",
+    "type": "custom-link"
+  },
+  {
+    "type": "file",
+    "name": "05-table-edit.mdx",
+    "label": "表格编辑（旧）"
+  },
+  {
+    "type": "file",
+    "name": "06-table2edit-v2.mdx",
+    "label": "表格编辑"
+  },
+  {
+    "type": "file",
+    "name": "07-dynamic-form.mdx",
+    "label": "动态表单"
+  },
+  {
+    "type": "file",
+    "name": "08-dynamic-filter.mdx",
+    "label": "动态过滤器"
+  },
+  {
+    "type": "file",
+    "name": "09-webcamera.mdx",
+    "label": "抓拍工具"
+  }
+]
