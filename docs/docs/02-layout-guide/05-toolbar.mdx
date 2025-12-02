@@ -1,1 +1,195 @@
 # toolbar 工具条
+ tip
+工具栏面板，主要用于包裹功能操作按钮、过滤器形成区块。
+
+
+## 示例
+
+## 基础用法
+
+显示外层padding，内部分为功能区、过滤器区域、过滤器功能区
+
+
+
+```
+<template>
+  <tool-bar :show-more="true" :divider="true" :padding-size="paddingSize" border tool-max-width="160px" >
+    <template v-slot:tool>
+      <el-button type="info" :icon="Search" plain >查询</el-button>
+      <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+    </template>
+    <template v-slot:filter>
+      <el-col v-for="i in 10" :key="i" :xs="24" :sm="12" :md="8" :lg="6" :xl="4">
+        <filter-item label="材料名称" :label-width="'70px'">
+          <el-input v-model="input"  placeholder="请输入内容"></el-input>
+        </filter-item> 
+      </el-col>
+    </template>
+    <flex-line :left-padding="true" :right-padding="true" :left-clear-padding="[]" :right-clear-padding="[]">
+      <el-button type="primary" :icon="Plus" @click="add">新增</el-button>
+      <el-button type="primary" plain :icon="Edit" @click="edit">编辑</el-button>
+      <el-button type="danger" plain  :icon="Delete">删除</el-button>
+      <span style="padding-left:10px">合计金额：<span style="color:red">333433.88</span></span>
+      <template v-slot:right>
+          <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+      </template>
+    </flex-line>
+  </tool-bar>
+</template>
+
+<script lang="ts" setup>
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
+import {ref } from 'vue'
+const input = ref('')
+const inputNum = ref(1)
+const paddingSize = ref('large')
+</script>
+```
+
+
+
+## 简易用法
+
+可以通过`background`控制背景色的显示，`border`控制边框显示
+
+
+
+```
+<template>
+  <el-divider>功能区域</el-divider>
+  <tool-bar :background="false" border>
+    <flex-line :left-padding="true" :right-padding="true" :left-clear-padding="[]" :right-clear-padding="[]">
+      <el-button type="primary" :icon="Plus" @click="add">新增</el-button>
+      <el-button type="primary" plain :icon="Edit" @click="edit">编辑</el-button>
+      <el-button type="danger" plain  :icon="Delete">删除</el-button>
+      <span style="padding-left:10px">合计金额：<span style="color:red">333433.88</span></span>
+      <template v-slot:right>
+          <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+      </template>
+    </flex-line>
+  </tool-bar>
+  <el-divider>功能区域显示背景色</el-divider>
+  <tool-bar :background="true" border padding-size="small">
+    <flex-line :left-padding="true" :right-padding="true" :left-clear-padding="[]" :right-clear-padding="[]">
+      <el-button type="primary" :icon="Plus" @click="add">新增</el-button>
+      <el-button type="primary" plain :icon="Edit" @click="edit">编辑</el-button>
+      <el-button type="danger" plain  :icon="Delete">删除</el-button>
+      <span style="padding-left:10px">合计金额：<span style="color:red">333433.88</span></span>
+      <template v-slot:right>
+          <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+      </template>
+    </flex-line>
+  </tool-bar>
+  <el-divider>单独使用过滤器区域</el-divider>
+  <tool-bar border padding-size="small">
+    <template v-slot:tool>
+      <el-button type="info" :icon="Search" plain >查询</el-button>
+      <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+    </template>
+    <template v-slot:filter>
+      <el-col v-for="i in 10" :key="i" :xs="24" :sm="12" :md="8" :lg="6" :xl="4">
+        <filter-item label="材料名称" :label-width="'70px'">
+          <el-input v-model="input"  placeholder="请输入内容"></el-input>
+        </filter-item> 
+      </el-col>
+    </template>
+  </tool-bar>
+</template>
+```
+
+
+
+## 高级用法
+
+传入`more`插槽使用更多区域折叠功能
+
+`show-more`属性控制默认展开更多
+
+::: tip
+`filter`和`more`插槽同时存在的时候可以直接使用`el-col`作为子元素，这样两个区域之间不会出现空白区域
+:::
+
+
+
+```
+<template>
+  <tool-bar :show-more="true" :divider="true" :padding-size="paddingSize" border tool-max-width="160px">
+    <template v-slot:tool>
+      <el-button type="info" :icon="Search" plain >查询</el-button>
+      <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+    </template>
+    <template v-slot:filter>
+      <el-col v-for="i in 10" :key="i" :xs="24" :sm="12" :md="8" :lg="6" :xl="4">
+        <filter-item label="材料名称" :label-width="'60px'">
+          <el-input v-model="input"  placeholder="请输入内容"></el-input>
+        </filter-item> 
+      </el-col>
+    </template>
+    <template v-slot:more>
+      <el-col v-for="i in 10" :key="i" :xs="24" :sm="12" :md="8" :lg="6" :xl="4" >
+        <filter-item label="排序字段" :label-width="'60px'">
+          <el-input-number v-model="inputNum" :min="1" :max="10"  style="width:100%" @change="handleChange" />
+        </filter-item> 
+      </el-col>
+    </template>
+    <flex-line :left-padding="true" :right-padding="true" :left-clear-padding="[]" :right-clear-padding="[]">
+      <el-button type="primary" :icon="Plus" @click="add">新增</el-button>
+      <el-button type="primary" plain :icon="Edit" @click="edit">编辑</el-button>
+      <el-button type="danger" plain  :icon="Delete">删除</el-button>
+      <span style="padding-left:10px">合计金额：<span style="color:red">333433.88</span></span>
+      <template v-slot:right>
+          <el-button type="success" plain ><i class="cs-common excel"></i>&nbsp;导 出</el-button>
+      </template>
+    </flex-line>
+  </tool-bar>
+</template>
+
+<script lang="ts" setup>
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
+import {ref } from 'vue'
+const input = ref('')
+const inputNum = ref(1)
+const paddingSize = ref('large')
+</script>
+```
+
+
+
+### api
+
+#### 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| divider	| 显示分割线	| boolean	| true/false	| false |
+| padding-size	| 内边距大小	| string	| small/base/large |  |
+| clear-padding	| 清除内边距	| string[]	| left/right/top/bottom	| false |
+| tool-max-width	| 过滤器工具栏最大宽度	| string	| 	| 150px |
+| border	| 显示边框	| boolean	| true/false	| false |
+| show-more	| 默认展开更多	| boolean	| true/false	| false |
+| background	| 显示背景色	| boolean	| true/false	| true |
+| filter-gutter	| 设置过滤器区域`el-col`的间隔	| number	| 	| 6 |
+
+
+#### 插槽
+
+| 名称        |  描述 |
+| :--------- |:-----|
+|  more | 展开更多 | 
+|  filter | 过滤条件 | 
+|  tool | 过滤器工具栏 | 
+|  default | 工具条 | 

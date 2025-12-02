@@ -1,1 +1,38 @@
 # 折叠分割线
+::: tip
+折叠分割线
+:::
+
+##  基础用法
+
+`v-model`为折叠状态，`true`代表折叠，`false`代表展开
+
+```
+<template>
+  <fold-divider v-model="isFold" title="禁用折叠功能" disable-fold></fold-divider>
+  <div v-if="!isFold" style="height:100px;background:var(--el-color-primary-light-9)">区域1</div>
+  <fold-divider v-model="isFold1" title="默认折叠"></fold-divider>
+  <div v-if="!isFold1" style="height:100px;background:var(--el-color-primary-light-9)">区域2</div>
+  <fold-divider v-model="isFold2" title="默认展开" default-expand></fold-divider>
+  <div v-if="!isFold2" style="height:100px;background:var(--el-color-primary-light-9)">区域3</div>
+</template>
+<script lang="ts" setup>
+  import {ref} from 'vue'
+  const isFold = ref(false)
+  const isFold1 = ref(false)
+  const isFold2 = ref(false)
+</script>
+```
+
+
+## 参数
+
+### 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| v-model	| 折叠状态，`true`代表折叠，`false`代表展开	| boolean	| 	|  |
+| title | 分割线标题| string | |  	|  |
+| disable-fold | 禁用折叠功能| boolean |  |  	| false |
+| content-position | 分割线内容出现的位置| emun | 'left' / 'right' / 'center' |  	| left |
+| default-expand | 默认展开（折叠功能需打开）| boolean | |  	| false |

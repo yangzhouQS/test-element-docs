@@ -1,1 +1,62 @@
 # 面板
+::: tip
+元素块的包裹容器
+:::
+
+
+####  基础用法
+
+使用`show-header`控制头部的显示或隐藏，可以自定义右侧工具栏
+
+```
+<template>
+   <panel
+    title="标题"
+    :show-header="true"
+    border
+    :padding-size="'base'"
+    >
+      <template #tool>
+    <flex-line :left-padding="true" :right-padding="true" :left-clear-padding="['left']">
+        <el-button type="primary" :icon="Plus" @click="dialogVisible=true">新增</el-button>
+        <el-button type="primary" plain :icon="Edit">编辑</el-button>
+        <el-button type="danger" plain  :icon="Delete">删除</el-button>
+      <template #right>
+        <el-button
+          type="primary"
+          link
+          >更多>></el-button
+        >
+      </template>
+    </flex-line>
+      </template>
+        <div v-for="i in 10 " :key="i">这是内容{{i}}</div>
+    </panel>
+</template>
+
+<script lang="ts" setup>
+</script>
+<style lang="less" scoped>
+</style>
+```
+
+### api
+
+#### 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| show-header	| 显示头部	| boolean	| 	| true |
+| title	| 标题	| string	| 	|   |
+| border| 显示边框	| boolean	|	|  false|
+| padding-size	| 内边距大小	| string	| small/base/large |  |
+| clear-padding	| 清除内边距	| string[]	| left/right/top/bottom	| false |
+| height| 容器高度	| string	|	| 100%  |
+
+
+#### 插槽
+
+| 名称        |  描述 |
+| :--------- |:-----|
+|  default | 容器内容 |
+|  tool | 头部工具栏 |

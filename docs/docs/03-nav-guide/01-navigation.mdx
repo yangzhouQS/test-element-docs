@@ -1,1 +1,80 @@
 # Navigation 导航
+
+::: tip
+显示页面层级，设置路由跳转
+:::
+
+##  基础用法
+
+`routers`属性传入路由列表，如果有的层级需要跳转路由，设置`to`属性即可
+
+
+```
+<template>
+  <navigation :routers="navData"></navigation>
+</template>
+<script lang="ts" setup>
+  const { ref } = Vue
+  const navData = ref([
+    { title: '基础数据' },
+    { title: '收料登记', to: '/navigation'  },
+    { title: '单据详情'}
+  ])
+</script>
+```
+
+
+##  自定义功能
+
+`tool`插槽可以在组件右侧放置导航相关的按钮
+
+
+```
+<template>
+  <navigation :routers="navData">
+    <template #tool>
+      <el-button type="primary" link> 关闭 </el-button>
+    </template>
+  </navigation>
+</template>
+<script lang="ts" setup>
+  const { ref } = Vue
+  const navData = ref([
+    { title: '基础数据' },
+    { title: '收料登记', to: '/navigation'  },
+    { title: '单据详情'}
+  ])
+</script>
+```
+
+
+
+## 参数
+
+### 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| routers	| 路由数据	| RouterItem[]	| 	| [] |
+| height	| 高度	| string	| 	| 14px |
+
+### RouterItem 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| title	| 标题	| string	| 	|  |
+| to	| 标题	| RouterTo/string	| 	|  |
+
+### RouterTo 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| path	| 跳转路径	| string	| 	|  |
+| query	| 路由参数	| object	| 	|  |
+
+### 插槽
+
+| 名称        |  描述 |
+| :--------- |:-----|
+|  tool | 右侧工具栏插槽 | 
+
