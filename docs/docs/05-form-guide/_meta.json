@@ -46,14 +46,15 @@
     "label": "可搜索树选择器"
   },
   {
-    "type": "file",
-    "name": "03-date-pick.mdx",
-    "label": "日期选择器"
+    "label": "日期选择器",
+    "name": "DatePicker",
+    "link": "https://element-plus.org/zh-CN/component/date-picker",
+    "type": "custom-link"
   },
   {
-    "label": "时间选择器",
-    "name": "TimePick",
-    "link": "https://element-plus.org/zh-CN/component/date-picker.html",
+    "label": "日期时间选择器",
+    "name": "DateTimePicker",
+    "link": "https://element-plus.org/zh-CN/component/datetime-picker",
     "type": "custom-link"
   },
   {
@@ -86,7 +87,7 @@
   },
   {
     "type": "file",
-    "name": "06-table2edit-v2.mdx",
+    "name": "06-table-edit-v2.mdx",
     "label": "表格编辑"
   },
   {

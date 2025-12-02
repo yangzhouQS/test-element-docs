@@ -1,0 +1,8 @@
+export { default as recommend } from './__recommend.md'
+export { default as basic} from './basic.md'
+export { default as layout} from './layout.md'
+export { default as validate} from './validate.md'
+export { default as display} from './display.md'
+export { default as control} from './control.md'
+export { default as divider} from './divider.md'
+export { default as api } from './__api.md'
