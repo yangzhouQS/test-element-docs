@@ -163,7 +163,6 @@ app.mount('#root');
 					return `
 import { createRoot } from 'react-dom/client';
 import Demo from ${ JSON.stringify(demoPath) };
-console.log("demo = ", Demo);
 const container = document.getElementById('root');
 createRoot(container).render(<Demo />);
 `;

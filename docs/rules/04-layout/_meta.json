@@ -1,9 +1,12 @@
 [
   {
     "type": "file",
-    "name": "getting-started",
-    "label": "快速开始",
-    "collapsible": true,
-    "collapsed": true
+    "name": "01-layout.mdx",
+    "label": "页面布局"
+  },
+  {
+    "type": "file",
+    "name": "02-container.mdx",
+    "label": "块容器布局"
   }
 ]
