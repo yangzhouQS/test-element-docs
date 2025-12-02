@@ -3,7 +3,7 @@
 
 设置`sort-change`事件后端排序
 
-:::demo  
+  
 
 ```html
 <template>

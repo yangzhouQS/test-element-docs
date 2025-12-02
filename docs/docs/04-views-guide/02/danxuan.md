@@ -4,7 +4,7 @@
 绑定`current-change`事件可以获取当前选中行
 
 
-:::demo  
+  
 
 ```html
 <template>

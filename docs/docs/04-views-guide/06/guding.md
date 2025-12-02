@@ -2,7 +2,7 @@
 
 设置`fixed`属性`left`，`right`，`null`
 
-:::demo  
+  
 
 ```html
 <template>

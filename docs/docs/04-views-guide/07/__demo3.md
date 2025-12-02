@@ -2,7 +2,7 @@
 
 `direction`属性设置为`vertical`将列表纵向排列
 
-:::demo  
+  
 
 ```html
 <template>

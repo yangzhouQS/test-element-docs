@@ -2,7 +2,7 @@
 
 获取到数据之后绑定给`list-data`
 
-:::demo  
+  
 
 ```html
 <template>

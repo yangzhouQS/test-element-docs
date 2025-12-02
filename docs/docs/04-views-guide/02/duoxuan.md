@@ -5,7 +5,7 @@
 `toggleRowSelection`方法用来设置行点击选中
 
 
-:::demo  
+  
 
 ```html
 <template>

@@ -6,7 +6,7 @@
 
 展开节点时触发`load-node`事件，将异步获取的数据传递给`resolve`方法构造子级节点
 
-:::demo  
+  
 
 ```html
 <template>

@@ -4,7 +4,7 @@
 
 `items`属性明细中的`layout`属性设置`el-col`的参数
 
-:::demo  
+  
 
 ```html
 <template>

@@ -5,7 +5,7 @@
 
 如需设置自定义排序规则，列配置中设置`sortable`属性为`custom`，表格加载时则会触发`sort-change`事件，在这个事件里可以自定义排序规则，或者`异步调用接口`查询
 
-:::demo  
+  
 
 ```html
 <template>

@@ -4,7 +4,7 @@
 
 设置`list-item-props`属性，用来设置每个列表项的大小、边框等参数
 
-:::demo  
+  
 
 ```html
 <template>

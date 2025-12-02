@@ -2,7 +2,7 @@
 
 卡控可以在`renderContent`中做逻辑判断
 
-:::demo  
+  
 
 ```html
 <template>

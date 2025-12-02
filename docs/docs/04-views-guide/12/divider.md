@@ -4,7 +4,7 @@
 
 
 
-:::demo
+
 
 ```html
 <template>

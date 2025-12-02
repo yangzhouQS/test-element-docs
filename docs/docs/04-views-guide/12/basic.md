@@ -2,7 +2,7 @@
 
 `items`属性将展示内容项以对象数组的形式配置，其中`renderContent`为每项的内容渲染函数
 
-:::demo
+
 
 ```html
 <template>

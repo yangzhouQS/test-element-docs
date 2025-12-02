@@ -2,7 +2,7 @@
 
 列配置属性中设置`scopedSlot`属性，值与插槽名对应，`scope.row`返回当前行数据
 
-:::demo  
+  
 
 ```html
 <template>

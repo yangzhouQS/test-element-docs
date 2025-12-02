@@ -1,7 +1,7 @@
 ## 多级表头
 
 父节点在列配置中设置`isParent`为`true`，子级节点放在`items`中
-:::demo  
+  
 
 ```html
 <template>

@@ -2,8 +2,6 @@
 
 加载数据和翻页使用`reload`事件，获取到数据之后绑定给`table-data`
 
-:::demo  
-
 ```html
 <template>
   <div style="height:400px;">
@@ -37,7 +35,7 @@
   const visible = ref(false)
   const tableNextRef = ref(null)
   const pagination = reactive({
-    currentSize: 10
+   currentSize: 10
   })
   const tableConfig = computed(() => {
     return [
@@ -72,7 +70,6 @@ onMounted(async () => {
 })
 </script>
 ```
-:::
   
 
 

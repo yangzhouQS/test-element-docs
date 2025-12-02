@@ -4,7 +4,7 @@
 
 或者传入`summary-method`方法，自定义合计行内容
 
-:::demo  
+  
 
 ```html
 <template>

@@ -2,7 +2,7 @@
 
 给`table-data`赋值表格数据，组件内部自动分页
 
-:::demo  
+  
 
 ```html
 <template>

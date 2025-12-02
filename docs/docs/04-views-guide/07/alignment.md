@@ -3,7 +3,7 @@
 设置该值可以调整所有子节点在容器内的对齐方式，可设置的值与[align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)一致。
 
 使用 alignment 属性来对齐
-:::demo  
+  
 
 ```html
 <template>

@@ -4,7 +4,7 @@
 通过给需要排序功能的列加上 sortable 属性可以支持排序
 
 配置 sort-by 指定字段排序、或者方法返回自定义排序的值
-:::demo  
+  
 
 ```html
 <template>

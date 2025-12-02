@@ -5,7 +5,7 @@
 或者传递`summary-method`方法计算
 
 `footer-data` 优先级高
-:::demo
+
 
 ```html
 <template>

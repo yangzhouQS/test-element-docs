@@ -10,7 +10,7 @@
 有些时候当列表布局改变时需要刷新滚动条状态，`getScrollRef`方法可以拿到`el-scrollbar`的实例
 :::
 
-:::demo  
+  
 
 ```html
 <template>

@@ -6,7 +6,7 @@
 
 `tree-config` 中 `expandAll` 表示展开所有节点，`expandRowKeys`展开指定节点
 
-:::demo  
+  
 
 ```html
 <template>

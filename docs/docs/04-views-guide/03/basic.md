@@ -2,7 +2,7 @@
 
 加载数据和翻页使用`reload`事件，获取到数据之后绑定给`table-data`
 
-:::demo  
+  
 
 ```html
 <template>

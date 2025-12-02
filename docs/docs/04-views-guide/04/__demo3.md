@@ -1,7 +1,7 @@
 ####  测试组件
 
 
-:::demo  
+  
 
 ```html
 <template>

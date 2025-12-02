@@ -12,7 +12,7 @@
 :::
 
 
-:::demo  
+  
 
 ```html
 <template>

@@ -2,7 +2,7 @@
 
 `wrap`属性设置是否换行
 
-:::demo  
+  
 
 ```html
 <template>

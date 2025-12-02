@@ -2,7 +2,7 @@
 
 `items`属性明细中的`display`属性来控制信息面板项的显示或隐藏
 
-:::demo  
+  
 
 ```html
 <template>

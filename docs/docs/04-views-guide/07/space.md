@@ -2,7 +2,7 @@
 
 `space-size`设置列表项之间的间距
 
-:::demo  
+  
 
 ```html
 <template>

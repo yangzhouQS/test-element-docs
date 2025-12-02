@@ -1,7 +1,7 @@
 ## 自定义表头
 
 列配置属性中设置`headerSlot`属性
-:::demo  
+  
 
 ```html
 <template>
