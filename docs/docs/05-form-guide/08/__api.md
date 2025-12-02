@@ -1,6 +1,6 @@
 
 ## 参数
-`tool-bar`的详细用法可以直接参考`tool-bar`的[文档](./docs.html#/toolbar)
+`tool-bar`的详细用法可以直接参考`tool-bar`的文档
 
 `layout`的详细用法可以直接参考`layout`的[文档](https://element-plus.org/zh-CN/component/layout.html)
 

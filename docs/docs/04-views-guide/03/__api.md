@@ -1,6 +1,6 @@
 ## api
 
-`table`部分的详细用法可以直接参考`table-only`的[文档](/dosktop-element/docs.html#/tableonly)
+`table`部分的详细用法可以直接参考`table-only`的文档
 ### TableAsync 属性
 
 `el-table`表格的通用属性和方法参照[文档](https://element-plus.org/zh-CN/component/table.html#table-%E5%B1%9E%E6%80%A7)

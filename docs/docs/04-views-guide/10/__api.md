@@ -2,7 +2,7 @@
 ## 参数
 ::: warning
 
-这里只列出分页相关的参数，`list`部分的参数查看`ListOnly 属性`[文档](/dosktop-element/docs.html#/listonly)
+这里只列出分页相关的参数，`list`部分的参数查看`ListOnly 属性`文档
 :::
 ### 属性
 
