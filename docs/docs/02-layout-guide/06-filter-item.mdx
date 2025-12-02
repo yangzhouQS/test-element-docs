@@ -7,38 +7,38 @@
 
 分为label区域和内容区域，可以设置label宽度和文本
 
-
-
-
-```
+```html
 <template>
-  <filter-item label="材料名称" :label-width="'80px'" >
-    <el-input v-model="input"  placeholder="请输入内容"></el-input>
+  <filter-item label="材料名称" :label-width="'80px'">
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
   </filter-item>
-  <filter-item label="材料名称材料名称材料名称" :label-width="'80px'" >
-    <el-input v-model="input"  placeholder="请输入内容"></el-input>
-  </filter-item> 
+  <filter-item label="材料名称材料名称材料名称" :label-width="'80px'">
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
+  </filter-item>
 </template>
+
 <script lang="ts" setup>
-  import {ref} from 'vue'
-  import { Plus, Edit, Delete } from '@element-plus/icons-vue'
-  const input = ref('')
+import { ref } from 'vue';
+import ElementPro from '@cs/element-pro';
+import { ElInput } from 'element-plus';
+
+const { FilterItem } = ElementPro;
+const input = ref('');
 </script>
+
 ```
 ##  描述
 
 打开`description`属性，启用描述功能，可以在单据详情页中使用
 
 
-
-
-```
+```html
 <template>
   <el-row>
     <el-col v-for="i in 12" :xs="24" :sm="12" :md="8" :lg="6" :xl="4">
       <filter-item label="材料名称" :label-width="'80px'" description>
         文本内容文本内容文本内容
-      </filter-item> 
+      </filter-item>
     </el-col>
   </el-row>
 </template>
@@ -48,7 +48,6 @@
   const input = ref('')
 </script>
 ```
-
 
 
 ## 参数

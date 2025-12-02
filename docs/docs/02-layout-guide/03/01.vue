@@ -7,7 +7,6 @@
   <div v-if="!isFold2" style="height:100px;background:var(--el-color-primary-light-9)">区域3</div>
 </template>
 <script lang="ts" setup>
-import {getCurrentInstance} from 'vue'
 import { ElDivider } from 'element-plus';
 import ElementPro from '@cs/element-pro';
 
