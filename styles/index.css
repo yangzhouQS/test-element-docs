@@ -1,0 +1,18 @@
+.rp-preview--iframe-follow {
+    flex-direction: column !important;
+}
+
+.rp-preview--iframe-follow__device {
+    max-width: 100%;
+    max-height: 700px;
+    overflow: hidden;
+}
+
+.rp-preview--iframe-follow__device iframe {
+    width: 100%;
+}
+
+.rp-preview--iframe-follow__code {
+    max-height: 700px !important;
+    overflow: auto !important;
+}

@@ -19,19 +19,8 @@
 主功能也可以是警告、错误功能按钮，根据业务场景决定
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="primary" :icon="Plus" >主功能</el-button>
-  <el-button type="primary" plain :icon="Edit" >次功能</el-button>
-  <el-button type="warning" :icon="Edit" >主功能</el-button>
-  <el-button type="warning" plain :icon="Edit" >次功能</el-button>
-</template>
-<script setup lang="ts">
-import {ElButton} from 'element-plus'
-import { Plus, Edit, Delete, Search, Paperclip, Setting, Printer,Coordinate,Upload, Download, Warning, ArrowDown, Remove, ZoomIn, Refresh, CircleCheck, InfoFilled } from '@element-plus/icons-vue'
-const { ref } = Vue
-const btnVisible = ref(false)
-</script>
+```vue preview="iframe-follow" file="./02/01.vue"
+
 ```
 
 ### 业务类型
@@ -42,13 +31,7 @@ const btnVisible = ref(false)
 对数据有影响操作的按钮，如：新增、修改、审核、保存、确认、启用、选材、上传等。
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="primary" :icon="Plus" >主操作功能</el-button>
-  <el-button type="primary" plain :icon="Edit" >次操作功能</el-button>
-</template>
-<script setup lang="ts">
-</script>
+```vue preview="iframe-follow" file="./02/02.vue"
 ```
 
 
@@ -56,11 +39,8 @@ const btnVisible = ref(false)
 
 一些逆向的业务操作或者对其他业务有影响的操作，如：撤销审核、撤销审批等。
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="warning" :icon="Edit" >主警告功能</el-button>
-  <el-button type="warning" plain :icon="Edit" >次警告功能</el-button>
-</template>
+```vue preview="iframe-follow" file="./02/03.vue"
+
 ```
 
 
@@ -68,22 +48,16 @@ const btnVisible = ref(false)
 
 一些危险的业务操作，一般会对数据造成不可逆或者可逆过程很复杂的影响。 如：删除、冲红、禁用等。
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="danger" :icon="Warning">主危险功能</el-button>
-  <el-button type="danger" plain :icon="Warning">次危险功能</el-button>
-</template>
+```vue preview="iframe-follow" file="./02/04.vue"
+
 ```
 
 #### 普通功能按钮
 
 业务上实现的一个对主要业务功能进行补充的功能，如：查询、参数设置按钮等。
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="info" :icon="Search">主普通功能</el-button>
-  <el-button type="info" plain :icon="Search">次普通功能</el-button>
-</template>
+```vue preview="iframe-follow" file="./02/05.vue"
+
 ```
 
 
@@ -92,11 +66,8 @@ const btnVisible = ref(false)
 实现的一些不影响业务数据的功能，如数据导出、打印、下载等。
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="success" :icon="Paperclip">主辅助功能</el-button>
-  <el-button type="success" plain :icon="Paperclip">次辅助功能</el-button>
-</template>
+```vue preview="iframe-follow" file="./02/06.vue"
+
 ```
 
 #### 文字按钮
@@ -105,23 +76,8 @@ const btnVisible = ref(false)
 
 文字+图标按钮：普通操作按钮，如表格行内编辑、删除、上传附件等按钮等
 
-```vue preview="iframe-follow"
-<template>
-  <el-button
-    link
-    type="primary"
-    :icon="Edit"
-  >
-    编辑
-  </el-button>
-  <el-button
-    link
-    type="danger"
-    :icon="Delete"
-  >
-    删除
-  </el-button>
-</template>
+```vue preview="iframe-follow" file="./02/07.vue"
+
 ```
 
 
@@ -129,59 +85,16 @@ const btnVisible = ref(false)
 纯文字按钮：一些`刻意弱化`的功能，防止误点。如：取消、重置、关闭按钮
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button
-    link
-    type="primary"
-  >
-    关闭
-  </el-button>
-  <el-button
-    link
-    type="primary"
-  >
-    返回
-  </el-button>
-  <el-button
-    link
-    type="primary"
-  >
-    重置
-  </el-button>
-  <el-button
-    link
-    type="primary"
-  >
-    取消
-  </el-button>
-</template>
+```vue preview="iframe-follow" file="./02/08.vue"
+
 ```
 
 ### 按钮形状
 按钮的形状有：方形按钮、圆形图标按钮、文字按钮
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="primary" :icon="Plus" >新增</el-button>
-  <el-tooltip
-    effect="dark"
-    content="查看信息"
-    placement="top"
-    >
-    <el-button type="info" circle size="small" :icon="ZoomIn" plain></el-button>
-  </el-tooltip>
-  <el-button
-    link
-    type="danger"
-    :icon="Delete"
-    size="small"
-  >
-    删除
-  </el-button>
+```vue preview="iframe-follow" file="./02/09.vue"
 
-</template>
 ```
 
 
@@ -200,12 +113,8 @@ const btnVisible = ref(false)
 按钮分为大按钮（large）、标准按钮（default）、小按钮（small） 三种尺寸
 
 
-```vue preview="iframe-follow"
-<template>
-  <el-button type="primary" :icon="Plus" size="large">Large 大按钮</el-button>
-  <el-button type="primary" :icon="Plus">Default 标准按钮</el-button>
-  <el-button type="primary" :icon="Plus" size="small">Small 小按钮</el-button>
-</template>
+```vue preview="iframe-follow" file="./02/10.vue"
+
 ```
 
 
@@ -236,25 +145,9 @@ const btnVisible = ref(false)
 在按钮较多时，可以考虑将一些非主要功能的按钮进行分组合并
 
 - 不能放增删改按钮，可以放导入、导出等功能
-```vue preview="iframe-follow"
-<template>
-<el-dropdown>
-	<el-button type="primary" plain>
-		更多
-		<el-icon class="el-icon--right">
-			<arrow-down/>
-		</el-icon>
-	</el-button>
-	<template
-	#dropdown>
-	<el-dropdown-menu>
-		<el-dropdown-item>导入</el-dropdown-item>
-		<el-dropdown-item>下载模板</el-dropdown-item>
-		<el-dropdown-item>导出</el-dropdown-item>
-	</el-dropdown-menu>
-</template>
-  </el-dropdown>
-</template>
+
+```vue preview="iframe-follow" file="./02/11.vue"
+
 ```
 
 ## 开发指导
@@ -271,34 +164,15 @@ const btnVisible = ref(false)
 
 - 危险按钮放在最后
 
-```vue preview="iframe-follow"
-<div style="border:solid 1px #ccc">
-	<flex-line
-	:left-padding="true" :right-padding="true" :right-clear-padding="['right']" left-width="400px">
-	<el-button type="primary" :icon="Plus" @click="dialogVisible=true">新增</el-button>
-<el-button type="primary" plain :icon = "Edit" > 编辑 < /el-button>
+```vue preview="iframe-follow" file="./02/12.vue"
 
-<el-button type="warning" class="button-margin-left" plain :icon = "Remove" > 停用 < /el-button>
-<el-button plain type="danger" :icon = "Delete" > 删除 < /el-button>
-</flex-line>
-</div>
 ```
 
 - 危险按钮显示popver组件进行确认操作
 
 
-```vue preview="iframe-follow"
-<el-popover :visible = "btnVisible" placement = "bottom" :width = "160" trigger = "click" >
-	< p > 删除以后无法恢复，是否继续 ?</p>
-<div style="text-align: right; margin: 0">
-	<el-button size="small" text
-	@click="btnVisible = false">取消</el-button>
-<el-button size="small" type="primary">确认</el-button>
-</div>
-  <template #reference>
-    <el-button type="danger"  plain @click="btnVisible=true" :icon="Delete" >删除</el-button>
-  </template>
-</el-popover>
+```vue preview="iframe-follow" file="./02/13.vue"
+
 ```
 
 - 表格行内按钮可以使用文字按钮、图标按钮、小按钮
@@ -306,247 +180,30 @@ const btnVisible = ref(false)
 - 按钮组默认会留出间距，如果按钮中间夹杂着其他组件，则使用`el-space`组件包裹，给出间距
 
 
-```vue preview="iframe-follow"
-<template>
-	<el-space>
-		<el-button type="primary"
-		:icon="Plus" >新增
-	</el-button>
-	<el-button type="primary" plain
-	:icon="Edit">编辑</el-button>
-<el-dropdown>
-	<el-button type="primary" plain>
-		更多
-		<el-icon class="el-icon--right">
-			<arrow-down/>
-		</el-icon>
-	</el-button>
-	<template
-	#dropdown>
-	<el-dropdown-menu>
-		<el-dropdown-item>导入</el-dropdown-item>
-		<el-dropdown-item>下载模板</el-dropdown-item>
-		<el-dropdown-item>导出</el-dropdown-item>
-	</el-dropdown-menu>
-</template>
-</el-dropdown>
-<el-checkbox>选择</el-checkbox>
-</el-space>
-</template>
+```vue preview="iframe-follow" file="./02/14.vue"
+
 
 ```
-:::
 
 ## 示例
 
 - 普通按钮
 
 
-```vue preview="iframe-follow"
-<template>
-	<div class="btn-items">
-		新增： <el-button type="primary" :icon="Plus" >新增
-	</el-button>
-</div>
-<div class="btn-items">
-	编辑： <el-button type="primary" :icon="Edit" >编辑</el-button>
-</div>
-<div class="btn-items">
-	保存： <el-button type="primary"><i class="cs-common baocun" style="font-size:14px"></i>&nbsp;保存</el-button>
-</div>
-<div class="btn-items">
-	提交： <el-button type="primary"><i class="cs-common tijiao" style="font-size:14px"></i>&nbsp;提交</el-button>
-</div>
-<div class="btn-items">
-	选材： <el-button type="primary"><i class="cs-common multi-add" style="font-size:14px"></i>&nbsp;合同选材</el-button>
-</div>
-<div class="btn-items">
-	查询： <el-button type="info" :icon="Search" >查询</el-button>
-</div>
-<div class="btn-items">
-	设置： <el-button type="info" :icon="Setting" >设置</el-button>
-</div>
-<div class="btn-items">
-	打印： <el-button type="success"><i class="cs-common dayin"></i>&nbsp;打印</el-button>
-</div>
-<div class="btn-items">
-	导出： <el-button type="success"><i class="cs-common excel" style="font-size:14px"></i>&nbsp;导出</el-button>
-</div>
-<div class="btn-items">
-	撤销提交： <el-button type="warning"><i class="cs-common chexiao" style="font-size:14px"></i>&nbsp;撤销提交</el-button>
-</div>
-<div class="btn-items">
-	删除：
-	<el-popover :visible="btnVisible" placement="bottom" :width="160" trigger="click">
-	<p>删除以后无法恢复，是否继续?</p>
-	<div style="text-align: right; margin: 0">
-		<el-button size="small" text
-		@click="btnVisible = false">取消
-	</el-button>
-	<el-button size="small" type="primary">确认</el-button>
-</div>
-<template #reference >
-< el - button type = "danger" :icon = "Delete" @click= "btnVisible=true" > 删除 < /el-button>
-</template>
-    </el-popover>
-  </div>
-  <div class="btn-items">
-	上传附件： <el-button type="primary" :icon="Upload" >上传附件</el-button>
-</div>
-  <div class="btn-items">
-	下载附件： <el-button type="primary" :icon="Download" >下载附件</el-button>
-</div>
-  <div class="btn-items">
-	重置：
-	<el-button type="warning"
-	:icon="Refresh">重置</el-button>
-</div>
-  <div class="btn-items">
-	启用：
-	<el-button type="primary"><i class="cs-common qiyong" style="font-size:14px"></i>&nbsp; 启用</el-button>
-</div>
-  <div class="btn-items">
-	停用：
-	<el-button type="warning"><i class="cs-common tingyong" style="font-size:14px"></i>&nbsp; 停用</el-button>
-</div>
-</template>
-<script setup lang="ts">
-</script>
-<style>
-	.btn-items{
-	padding - bottom: 10px
-}
-</style>
+```vue preview="iframe-follow" file="./02/15.vue"
+
 ```
 
 
 - 文字按钮
 
-```vue preview="iframe-follow"
-<template>
-	<div class="btn-items">
-		编辑： <el-button link type="primary" :icon="Edit">编辑
-	</el-button>
-</div>
-<div class="btn-items">
-	删除： <el-button link type="danger" :icon="Delete">删除</el-button>
-</div>
-<div class="btn-items">
-	上传附件： <el-button type="primary" link :icon="Upload" >上传附件</el-button>
-</div>
-<div class="btn-items">
-	下载附件： <el-button type="success" link :icon="Download" >下载附件</el-button>
-</div>
-<div class="btn-items">
-	关闭：
-	<el-button
-		link
-		type="primary"
-	>
-		关闭
-	</el-button>
-</div>
-<div class="btn-items">
-	返回：
-	<el-button
-		link
-		type="primary"
-	>
-		返回
-	</el-button>
-</div>
-<div class="btn-items">
-	重置：
-	<el-button
-		link
-		type="warning"
-	>
-		重置
-	</el-button>
-</div>
-<div class="btn-items">
-	取消：
-	<el-button
-		link
-		type="primary"
-	>
-		取消
-	</el-button>
-</div>
-<div class="btn-items">
-	说明信息：
-	<el-tooltip
-		effect="dark"
-		content="查看信息"
-		placement="top"
-	>
-		<el-button type="info" link plain size="small" style="height: 100%"
-		:icon="InfoFilled">
-	</el-button>
-</el-tooltip>
-</div>
-</template>
-<script setup lang="ts">
-</script>
-<style>
-	.btn-items{
-	padding - bottom: 10px
-}
-</style>
+```vue preview="iframe-follow" file="./02/16.vue"
+
 ```
 
 
 - 图标按钮  `v1.1`
 
-```html
-<template>
-	<div class="btn-items">
-		打印：
-		<el-tooltip class="box-item" effect="dark" content="打印" placement="top">
-			<el-button type="success" circle size="small" plain
-			@click="_printExport(scope.row, 'print')"><i class="cs-common dayin" style="font-size:12px"
-		></i></el-button>
-	</el-tooltip>
-</div>
-  <div class="btn-items">
-	导出： <el-tooltip class="box-item" effect="dark" content="导出" placement="top">
-	<el-button type="success" circle size="small" plain
-	@click="_printExport(scope.row, 'export')"><i class="cs-common excel" style="font-size:12px"
-></i></el-button>
-</el-tooltip>
-  </div>
+```vue preview="iframe-follow" file="./02/17.vue"
 
-  <div class="btn-items">
-	详情：
-	<el-tooltip
-		effect="dark"
-		content="查看信息"
-		placement="top"
-	>
-		<el-button type="info" circle size="small" plain><i class="cs-common xiangqing" style="font-size:12px"></i>
-		</el-button>
-	</el-tooltip>
-</div>
-  <div class="btn-items">
-	审批流：
-	<el-tooltip
-		effect="dark"
-		content="查看信息"
-		placement="top"
-	>
-		<el-button type="info" circle size="small" plain><i class="cs-common shenpiliu" style="font-size:12px"></i>
-		</el-button>
-	</el-tooltip>
-</div>
-</template>
-<script setup lang="ts">
-</script>
-<style>
-	.btn-items{
-	padding - bottom: 10px
-}
-</style>
 ```
-:::
-
-

@@ -5,7 +5,6 @@ import { pluginVue } from '@rsbuild/plugin-vue';
 import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginPreview } from 'plugin-vue3-preview';
-import ElementPlus from 'element-plus'
 
 const injectConfig = {
 	tags: [
@@ -48,7 +47,7 @@ const injectConfig = {
 		{
 			tag: 'script',
 			attrs: {
-				src: 'https://cdn.yearrow.com/files/@cs/element-pro/1.7.9/element-pro.iife.js',
+				src: 'https://cdn.yearrow.com/files/@cs/element-pro/1.8.0/element-pro.iife.js',
 			},
 		},
 		{
@@ -90,6 +89,7 @@ export default defineConfig({
 		light: 'https://cdn.yearrow.com/imgs/img-logo/logo.png',
 		dark: 'https://cdn.yearrow.com/imgs/wmcp/wmcp-logo/wmcp.png',
 	},
+	globalStyles: path.join(__dirname, 'styles/index.css'),
 	ssg: true,
 	description: '组件使用参考文档',
 	logoText: '云阙平台',
@@ -145,7 +145,8 @@ export default defineConfig({
 			defaultRenderMode: 'preview', // 'pure' | 'preview'
 			defaultPreviewMode: 'iframe-fixed', // 'internal' | 'iframe-follow' | 'iframe-fixed'
 			iframeOptions: {
-				position: 'fixed',
+				// position: 'fixed',
+				devPort: 7156,
 				customEntry: ({ demoPath }) => {
 					if (demoPath.endsWith('.vue')) {
 						return `
@@ -153,7 +154,7 @@ import { createApp } from 'vue';
 import App from ${ JSON.stringify(demoPath) };
 const app = createApp(App)
 if(window.ElementPlus){
-console.log("注册成功");
+	console.log("--ElementPlus 注册成功");
 	app.use(window.ElementPlus);
 }
 app.mount('#root');
