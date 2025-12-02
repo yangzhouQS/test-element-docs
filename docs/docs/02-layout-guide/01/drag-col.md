@@ -4,6 +4,6 @@
 
 `dragButtonPosition`设置值为`top`或`bottom`
 
-```vue file="./drag-col.vue"
+```vue file="./drag-col-vue.vue"
 
 ```

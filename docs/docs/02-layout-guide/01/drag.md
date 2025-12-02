@@ -16,6 +16,6 @@
 
 `dragButtonPosition`设置值为`left`或`right`
 
-```vue file="./drag.vue"
+```vue file="./drag-vue.vue"
 
 ```
