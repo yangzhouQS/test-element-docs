@@ -1,6 +1,0 @@
-export { default as recommend } from './__recommend.md'
-export { default as demo1 } from './__demo1.md'
-export { default as basic } from './basic.md'
-export { default as defaultvalue } from './default.md'
-export { default as disabled } from './disabled.md'
-export { default as api } from './__api.md'

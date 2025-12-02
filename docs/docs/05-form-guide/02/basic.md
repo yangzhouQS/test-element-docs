@@ -6,7 +6,7 @@
 
 `loadNode`方法的第二个参数`resolve`是一个回调函数，使用`resolve`函数传递数据列表，用来加载下级数据
 
-:::demo  
+  
 
 ```html
 <template>
@@ -71,5 +71,4 @@ onMounted(() => {
 <style lang="less" scoped>
 </style>
 ```
-:::
 

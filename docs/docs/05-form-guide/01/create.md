@@ -8,7 +8,7 @@
 
 添加完数据以后会自动刷新列表
 
-:::demo  
+  
 
 ```html
 <template>

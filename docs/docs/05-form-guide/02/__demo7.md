@@ -5,7 +5,7 @@
 
 设置`reload-enable`属性打开刷新功能
 
-:::demo  
+  
 
 ```html
 <template>

@@ -2,7 +2,7 @@
 
 给需要冻结的列设置`fixed`属性
 
-:::demo  
+  
 
 ```html
 <template>
@@ -166,4 +166,3 @@ const initData = (length = 10) => {
 </script>
 
 ```
-:::

@@ -1,6 +1,6 @@
 ##  表单校验
 
-:::demo  
+  
 
 ```html
 <template>

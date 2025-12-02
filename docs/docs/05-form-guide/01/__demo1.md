@@ -2,7 +2,7 @@
 
 设置`clearable`属性，可以清空选择器
 
-:::demo  
+  
 
 ```html
 <template>

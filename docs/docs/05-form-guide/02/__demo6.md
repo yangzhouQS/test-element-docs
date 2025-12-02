@@ -3,7 +3,7 @@
 
 在`default-props`中的`disabled`设置禁用字段,值为`true`则禁用
 
-:::demo  
+  
 
 ```html
 <template>

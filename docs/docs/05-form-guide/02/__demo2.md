@@ -9,7 +9,7 @@
 
 `load-node`的第一个参数`node`中会返回下次查询的`limit`和`offset`值，在展开节点和加载更多功能调用
 
-:::demo  
+  
 
 ```html
 <template>
@@ -69,4 +69,3 @@ const _selectChange = (node) => {
 <style lang="less" scoped>
 </style>
 ```
-:::

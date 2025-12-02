@@ -3,7 +3,7 @@
 
 `disabled`属性设置为`true`开启禁用
 
-:::demo  
+  
 
 ```html
 <template>
@@ -92,5 +92,4 @@ const _selectChange = (node) => {
 }
 </style>
 ```
-:::
 

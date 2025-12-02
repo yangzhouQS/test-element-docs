@@ -4,7 +4,7 @@
 
 保存时调用表单实例的`validate`方法获取验证结果
 
-:::demo  
+  
 
 ```html
 <template>

@@ -4,7 +4,7 @@
 组件默认不自动展开节点，如果需要展开并且选中某个节点，可以设置`default-expanded-keys`属性设置展开节点
 
 
-:::demo
+
 
 ```html
 <template>

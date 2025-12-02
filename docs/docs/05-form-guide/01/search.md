@@ -3,7 +3,7 @@
 `search-enable`设置为`false`则会关闭搜索功能
 
 
-:::demo  
+  
 
 ```html
 <template>

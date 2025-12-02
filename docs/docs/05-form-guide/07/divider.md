@@ -3,7 +3,7 @@
 在`form-items`属性中添加分割线配置项,`type`值为`divider`，没有分割线设置就不会显示分割线
 
 
-:::demo  
+  
 
 ```html
 <template>

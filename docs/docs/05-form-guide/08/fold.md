@@ -2,7 +2,7 @@
 
 传入`more-items`可以打开`展开更多`功能
 
-:::demo  
+  
 
 ```html
 <template>

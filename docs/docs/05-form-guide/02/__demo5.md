@@ -3,7 +3,7 @@
 
 `clearable`开启清除选择功能
 
-:::demo  
+  
 
 ```html
 <template>
@@ -105,5 +105,4 @@ const _selectChange = (node) => {
 }
 </style>
 ```
-:::
 

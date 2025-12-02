@@ -3,7 +3,7 @@
 禁用/只读日期面板无法选择，前进、后退按钮禁用
 
 
-:::demo  
+  
 
 ```html
 <template>
@@ -38,4 +38,3 @@
   const accountDay = ref(20)
 </script>
 ```
-:::

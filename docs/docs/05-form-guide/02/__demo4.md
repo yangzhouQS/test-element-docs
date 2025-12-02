@@ -6,7 +6,7 @@
 
 `listitem`插槽渲染列表
 
-:::demo  
+  
 
 ```html
 <template>
@@ -104,4 +104,3 @@ const _selectChange = (node) => {
 }
 </style>
 ```
-:::

@@ -8,7 +8,7 @@
 
 `load-search-data`方法加载搜索数据列表，`filter`参数为搜索框中所填的值
 
-:::demo  
+  
 
 ```html
 <template>
@@ -91,4 +91,3 @@ const _selectChange = (node) => {
 <style lang="less" scoped>
 </style>
 ```
-:::

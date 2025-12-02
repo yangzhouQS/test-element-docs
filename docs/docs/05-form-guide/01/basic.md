@@ -8,8 +8,6 @@
 - 数据选择：`change`事件返回当前选中的行
 
 
-:::demo  
-
 ```html
 <template>
   <search-select
@@ -53,4 +51,3 @@
   }
 </script>
 ```
-:::

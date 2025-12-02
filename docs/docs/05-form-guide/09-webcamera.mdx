@@ -1,11 +1,123 @@
 # 抓拍工具
-import * as demos from './09/__index';
 
-<demos.recommend />
-<demos.demo1 />
+::: tip
+提供网络摄像机和抓拍功能
+:::
 
-```vue pure file="./09/base.vue" name="base.vue"
+##  基础用法
+`init`事件在摄像机初始化以后触发，返回参数为当前设备所连接的摄像机列表，调用`initCamera`方法可以切换摄像机
+
+调用`getPhotoBase64`方法进行抓拍，返回图片格式为`image/png`的base64格式
+
+```html
+<template>
+	<div>
+		<div style="width:640px;">
+			<WebCamera ref="cameraRef" @init="initcom"/>
+		</div>
+		<div>
+			<el-select v-model="currentVideo" placeholder="Select" style="width: 240px">
+				<el-option
+					v-for="item in videoList"
+				:key="item.deviceId"
+				:label="item.label"
+				:value="item.deviceId"
+				/>
+			</el-select>
+			<el-button @click="init">初始化</el-button>
+		<el-button @click="getPhoto">拍照</el-button>
+</div>
+    <img v-for="(item, i) in srcList" :key="i" :src="item" style="width:800px"/>
+  </div>
+</template>
+
+<script lang="ts" setup>
+	import { ref, onMounted } from 'vue';
+	import ElementPro from '@cs/element-pro';
+	import { ElSelect, ElOption } from 'element-plus';
+
+	const { WebCamera } = ElementPro;
+
+	const cameraRef = ref();
+	const srcList = ref([]);
+	const videoList = ref([]);
+	const currentVideo = ref('');
+	const getPhoto = () => {
+	srcList.value.push(cameraRef.value.getPhotoBase64());
+};
+	const initcom = (videos, currentDeviceId) => {
+	videoList.value = videos;
+	currentVideo.value = currentDeviceId;
+};
+	const init = () => {
+	cameraRef.value.initCamera(currentVideo.value);
+};
+</script>
 
 ```
-<demos.code />
-<demos.api />
+
+
+
+代码示例：
+```
+<template>
+  <div>
+    <div style="width:640px;">
+      <WebCamera ref="cameraRef" @init="initcom"/>
+    </div>
+      <div>
+        <el-select v-model="currentVideo" placeholder="Select" style="width: 240px">
+          <el-option
+            v-for="item in videoList"
+            :key="item.deviceId"
+            :label="item.label"
+            :value="item.deviceId"
+          />
+        </el-select>
+        <el-button @click="init">初始化</el-button>
+        <el-button @click="getPhoto">拍照</el-button>
+      </div>
+      <img v-for="(item, i) in srcList" :key="i" :src="item" style="width:800px" />
+  </div>
+</template>
+
+<script lang="ts" setup>
+const { ref, onMounted } = Vue;
+const cameraRef = ref();
+const srcList = ref([]);
+const videoList = ref([]);
+const currentVideo = ref('');
+const getPhoto = () => {
+  srcList.value.push(cameraRef.value.getPhotoBase64());
+};
+const initcom = (videos, currentDeviceId) => {
+  videoList.value = videos;
+  currentVideo.value = currentDeviceId;
+};
+const init = () => {
+  cameraRef.value.initCamera(currentVideo.value);
+};
+</script>
+```
+
+## 参数
+
+### 属性
+
+| 属性        | 说明       | 类型 | 可选值 | 默认值 |
+| :--------- |:--------| :-----| :-----| :-----|
+| width	| 像素宽度（可以不传是默认最大像素）	| number	| √	| 4096 |
+| height	| 像素高度（可以不传是默认最大像素）	| number	| √ | 2160 |
+
+### 事件
+| 名称        |  说明 | 回调参数 |
+| :--------- |:-----|:-----|
+|  init | 事件在摄像机初始化以后触发 (videos 摄像机列表, currentDeviceId 当前初始化的设备id) |(videos, currentDeviceId) |
+
+### 方法
+
+
+| 名称        |  描述 |
+| :--------- |:-----|
+|getPhotoBase64|抓拍，返回照片base64字符串|
+|initCamera|初始化相机，切换相机时使用|

@@ -2,7 +2,7 @@
 
 `form-items`属性明细中的`display`属性来控制表单项的显示或隐藏
 
-:::demo  
+  
 
 ```html
 <template>

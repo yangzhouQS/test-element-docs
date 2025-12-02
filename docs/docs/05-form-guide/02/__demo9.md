@@ -6,7 +6,7 @@
 `reload`事件在点击刷新按钮时调用
 
 
-:::demo
+
 
 ```html
 <template>

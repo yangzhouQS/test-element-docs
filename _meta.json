@@ -10,7 +10,8 @@
   },
   {
     "text": "web组件",
-    "link": "/docs/index.html"
+    "link": "/docs/02-layout-guide/01-flexbox.html",
+    "activeMatch": "/docs/"
   },
   {
     "text": "版本",

@@ -4,7 +4,7 @@
 
 `column-configs`设置列信息，`cellRenderer`方法返回需要渲染的组件
 
-:::demo  
+  
 
 ```html
 <template>
@@ -135,4 +135,3 @@ const initData = (length = 10) => {
 </script>
 
 ```
-:::

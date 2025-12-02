@@ -4,7 +4,7 @@
 
 `column-configs`设置列信息，`scopedSlot`渲染自定义列
 
-:::demo  
+  
 
 ```html
 <template>
