@@ -125,4 +125,3 @@ const onSubmit = async () => {
 </script>
 
 ```
-:::

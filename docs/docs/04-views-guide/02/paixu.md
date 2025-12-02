@@ -40,5 +40,3 @@ const sortChange = ({column, prop, order}) => {
 }
 </script>
 ```
-:::
-

@@ -84,4 +84,3 @@ onMounted(async () => {
 })
 </script>
 ```
-:::

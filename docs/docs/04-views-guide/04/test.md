@@ -75,4 +75,4 @@ onMounted(() => {
   loadData()
 })
 </script>
-:::
+```

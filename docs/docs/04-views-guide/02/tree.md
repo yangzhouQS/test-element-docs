@@ -130,5 +130,3 @@ const load = (
 }
 </script>
 ```
-:::
-

@@ -169,4 +169,3 @@ const hide = () => {
 </script>
 
 ```
-:::

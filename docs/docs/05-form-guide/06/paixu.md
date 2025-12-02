@@ -131,4 +131,3 @@ onMounted(() => {
 </script>
 
 ```
-:::

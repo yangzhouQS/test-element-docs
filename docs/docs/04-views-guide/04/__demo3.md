@@ -24,4 +24,3 @@
   </el-row>
 </template>
 ```
-:::

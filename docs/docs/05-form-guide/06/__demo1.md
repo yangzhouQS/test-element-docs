@@ -132,4 +132,3 @@ const initData = (length = 10) => {
 </script>
 
 ```
-:::

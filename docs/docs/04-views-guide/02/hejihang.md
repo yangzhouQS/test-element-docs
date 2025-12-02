@@ -41,5 +41,3 @@ const getSummaries = (param: SummaryMethodProps) => {
 }
 </script>
 ```
-:::
-

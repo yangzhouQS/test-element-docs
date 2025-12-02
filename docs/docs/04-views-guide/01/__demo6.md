@@ -93,5 +93,3 @@ const _selectChange = (node) => {
 }
 </style>
 ```
-:::
-

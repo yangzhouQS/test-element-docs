@@ -76,7 +76,3 @@ const _sortChange = (sort) => {
 }
 </script>
 ```
-:::
-  
-
-

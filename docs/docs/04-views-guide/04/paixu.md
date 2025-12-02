@@ -1,10 +1,6 @@
 ##  排序
-
-
 设置`sort-change`事件后端排序
-
   
-
 ```html
 <template>
   <div style="height:400px;">
@@ -68,4 +64,4 @@ onMounted(() => {
   loadData()
 })
 </script>
-:::
+```

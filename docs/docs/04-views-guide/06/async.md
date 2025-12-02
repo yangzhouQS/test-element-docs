@@ -78,5 +78,3 @@ const tableConfig = computed(() => {
 });
 </script>
 ```
-:::
-

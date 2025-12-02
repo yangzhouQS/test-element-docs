@@ -66,4 +66,3 @@ const sortNameMethod = ({ row }) => {
 }
 </script>
 ```
-:::
