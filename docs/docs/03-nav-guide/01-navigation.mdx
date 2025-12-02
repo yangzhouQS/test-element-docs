@@ -8,8 +8,11 @@
 
 `routers`属性传入路由列表，如果有的层级需要跳转路由，设置`to`属性即可
 
+```vue preview="iframe-follow" file="./01.vue"
 
 ```
+
+```html
 <template>
   <navigation :routers="navData"></navigation>
 </template>
@@ -23,13 +26,12 @@
 </script>
 ```
 
-
 ##  自定义功能
 
 `tool`插槽可以在组件右侧放置导航相关的按钮
 
 
-```
+```html
 <template>
   <navigation :routers="navData">
     <template #tool>
@@ -55,22 +57,22 @@
 
 | 属性        | 说明       | 类型 | 可选值 | 默认值 |
 | :--------- |:--------| :-----| :-----| :-----|
-| routers	| 路由数据	| RouterItem[]	| 	| [] |
-| height	| 高度	| string	| 	| 14px |
+| routers  | 路由数据  | RouterItem[]  |  | [] |
+| height  | 高度  | string  |  | 14px |
 
 ### RouterItem 属性
 
 | 属性        | 说明       | 类型 | 可选值 | 默认值 |
 | :--------- |:--------| :-----| :-----| :-----|
-| title	| 标题	| string	| 	|  |
-| to	| 标题	| RouterTo/string	| 	|  |
+| title  | 标题  | string  |  |  |
+| to  | 标题  | RouterTo/string  |  |  |
 
 ### RouterTo 属性
 
 | 属性        | 说明       | 类型 | 可选值 | 默认值 |
 | :--------- |:--------| :-----| :-----| :-----|
-| path	| 跳转路径	| string	| 	|  |
-| query	| 路由参数	| object	| 	|  |
+| path  | 跳转路径  | string  |  |  |
+| query  | 路由参数  | object  |  |  |
 
 ### 插槽
 
