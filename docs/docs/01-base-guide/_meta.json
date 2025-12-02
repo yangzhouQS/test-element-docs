@@ -1,0 +1,26 @@
+[
+  {
+    "type": "custom-link",
+    "name": "01-icon.mdx",
+    "label": "图标(扩展)",
+    "link": "https://element-plus.org/zh-CN/component/icon.html"
+  },
+  {
+    "type": "custom-link",
+    "name": "02-button.mdx",
+    "label": "按钮",
+    "link": "https://element-plus.org/zh-CN/component/button.html"
+  },
+  {
+    "type": "custom-link",
+    "name": "03-tag.mdx",
+    "label": "标签",
+    "link": "https://element-plus.org/zh-CN/component/tag.html"
+  },
+  {
+    "type": "custom-link",
+    "name": "04-scrollbar.mdx",
+    "label": "滚动条",
+    "link": "https://element-plus.org/zh-CN/component/scrollbar.html"
+  }
+]

@@ -1,1 +1,37 @@
-["index"]
+[
+  {
+    "type": "dir",
+    "name": "01-base-guide",
+    "label": "基础组件"
+  },
+  {
+    "type": "dir",
+    "name": "02-layout-guide",
+    "label": "布局组件"
+  },
+  {
+    "type": "dir",
+    "name": "03-nav-guide",
+    "label": "导航组件"
+  },
+  {
+    "type": "dir",
+    "name": "04-views-guide",
+    "label": "视图组件"
+  },
+  {
+    "type": "dir",
+    "name": "05-form-guide",
+    "label": "表单组件"
+  },
+  {
+    "type": "dir",
+    "name": "06-feedback-guide",
+    "label": "反馈组件"
+  },
+  {
+    "type": "dir",
+    "name": "07-other-guide",
+    "label": "其他"
+  }
+]
